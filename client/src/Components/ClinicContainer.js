@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
-import { fetchClinics } from "./clinicsSlice";
+import { fetchClinics } from "../Features/clinicsSlice";
 import ClinicCard from "./ClinicCard"
 
 const ClinicContainer = () => {

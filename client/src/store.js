@@ -1,6 +1,6 @@
 import {configureStore} from "@reduxjs/toolkit"
 
-import clinicsReducer from "./clinicsSlice"
+import clinicsReducer from "./Features/clinicsSlice"
 
 const store = configureStore({
     reducer: {
