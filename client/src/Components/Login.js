@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
+import {Link} from "react-router-dom"
 
 import { fetchLogin } from '../Features/usersSlice';
 
 function Login() {
     const dispatch = useDispatch()
 
-    const currentUser = useSelector(state => console.log(state))
 
     const [loginData, setLoginData] = useState({
         email: '',
@@ -50,7 +50,7 @@ function Login() {
                 </form>
             </div>
             <div>
-                Sign Up
+            or you can <Link to="/signup"> Sign Up</Link>
             </div>
         </>
     )

@@ -9,6 +9,7 @@ import Favorites from "./Components/Favorites";
 import Login from "./Components/Login";
 import ProfilePage from "./Components/ProfilePage";
 import Home from "./Components/Home";
+import Signup from "./Components/Signup";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route exact path="/favorites" element={<Favorites />} />
         <Route exact path="/profile" element={<ProfilePage />} />
         <Route exact path="/login" element={<Login />} />
+        <Route exact path="/signup" element={<Signup />} />
       </Routes>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from "react-router-dom"
+import {useSelector} from "react-redux"
 import styled from "styled-components"
-
 
 const NavStyle = styled.div`
     display: flex;
@@ -26,6 +26,10 @@ const StyledLink = styled(NavLink)`
 
 
 function NavBar() {
+
+    const currentUser = useSelector(state => (state.user.user.name))
+    console.log(currentUser)
+
     return (
         <NavStyle>
             <StyledLink exact to="/" >
@@ -35,7 +39,7 @@ function NavBar() {
                 Browse Care
             </StyledLink>
             <StyledLink exact to="/favorites" >
-                My Saved Clinics
+                {currentUser}'s Saved Clinics
             </StyledLink>
             <StyledLink exact to="/profile" >
                 Edit Profile

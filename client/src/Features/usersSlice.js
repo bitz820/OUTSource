@@ -2,6 +2,26 @@ const initialState = {
     user: {}
 }
 
+const createSignUp = (user) => {
+    return function (dispatch) {
+        fetch("/signup", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(user)
+        })
+            .then(r => {
+                if (r.ok) {
+                    r.json().then(user => dispatch({ type: "signup", payload: user}))
+                }else {
+                    r.json().then(err => console.log(err))
+                }
+            })
+    }
+}
+
 const fetchLogin = (user) => {
     return function (dispatch) {
         fetch("/login", {
@@ -23,9 +43,33 @@ const fetchLogin = (user) => {
     }
 }
 
+const handleLogout = user => {
+    return function (dispatch) {
+        fetch("logout", { method: "DELETE" })
+            .then(r => {
+                if (r.ok) {
+                    r.json().then(user => dispatch({ type: "logout", payload: user }))
+                }
+                else {
+                    r.json().then(err => console.log(err))
+                }
+            })
+    }
+}
+
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
         case "login":
+            return {
+                ...state,
+                user: action.payload
+            }
+        case "logout":
+            return {
+                ...state,
+                user: action.payload
+            }
+        case "signup":
             return {
                 ...state,
                 user: action.payload
@@ -36,7 +80,7 @@ const userReducer = (state = initialState, action) => {
 }
 
 export default userReducer
-export { fetchLogin }
+export { fetchLogin, handleLogout, createSignUp }
 
 
 
