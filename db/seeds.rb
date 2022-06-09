@@ -8,7 +8,7 @@
 
 puts "Seeding Users"
 
-User.create!(name: "Mark Bacon", email: "mark@gmail.com", password: "password", gender: "male", sexuality: "gay", reason_for_signup: "PrEP", referred: "provider")
+User.create!(name: "Mark Bacon", email: "mark@gmail.com", password: "password", age: 29, gender: "male", sexuality: "gay", reason_for_signup: "PrEP", referred: "provider")
 
 puts "Seeding Clinics"
 

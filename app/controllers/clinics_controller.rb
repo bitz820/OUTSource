@@ -1,4 +1,6 @@
 class ClinicsController < ApplicationController
+    skip_before_action :authorize, only: :index
+
     def index
         render json: Clinic.all, status: :ok
     end

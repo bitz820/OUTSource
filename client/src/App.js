@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-// import { useDispatch, useSelector } from "react-redux"
-// import { fetchClinics } from "./clinicsSlice";
 
 import NavBar from "./Components/NavBar"
 import ClinicContainer from "./Components/ClinicContainer";
