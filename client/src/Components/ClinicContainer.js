@@ -6,7 +6,7 @@ import ClinicCard from "./ClinicCard"
 const ClinicContainer = () => {
 
 
-  const [clinics, setClinics] = useState([]);
+  // const [clinics, setClinics] = useState([]);
   const allClinics = useSelector(state => (state.clinics.entities))
 
   const dispatch = useDispatch()

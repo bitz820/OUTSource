@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   resources :clinics
   resources :users
 
-  post "/signup" to: "users#create"
-  post "/login" to: "sessions#create"
-  delete "/logout" to: "sessions#destroy"
-  get "/me" to: "users#show"
+  post "/signup", to: "users#create"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
+  get "/me", to: "users#show"
 
   get '*path',
   to: 'fallback#index',

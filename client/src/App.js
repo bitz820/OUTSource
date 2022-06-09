@@ -1,5 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUser } from "./Features/usersSlice";
 
 import NavBar from "./Components/NavBar"
 import ClinicContainer from "./Components/ClinicContainer";
@@ -10,6 +12,10 @@ import Home from "./Components/Home";
 
 
 function App() {
+
+  
+
+
 
   return (
     <div className="App">
