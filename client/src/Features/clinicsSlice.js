@@ -1,30 +1,27 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-export const fetchClinics = createAsyncThunk("clinics/fetchClinics", () => {
-    return fetch("/clinics")
+const initialState = {
+    clinics: []
+}
+
+const fetchClinics = () => {
+    return function (dispatch) {
+        fetch("/clinics")
             .then(r => r.json())
-            .then(data => data)
-    });
-
-const clinicsSlice = createSlice({
-    name: "clinics",
-    initialState: {
-        entities: [],
-        status: "idle"
-    },
-    reducers: {
-        // WRITE CRUD HERE -- IF NEEDED
-    },
-    extraReducers: {
-        [fetchClinics.pending](state){
-            state.status = "loading";
-        },
-        [fetchClinics.fulfilled](state, action){
-            state.entities = action.payload;
-            state.status = "idle"
-        }
+            .then(clinics => dispatch({ type: "fetchClinics", payload: clinics }))
     }
-})
+}
 
+const clinicsReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case "fetchClinics":
+            return {
+                ...state,
+                clinics: action.payload
+            }
+        default:
+            return state
+    }
+}
 
-export default clinicsSlice.reducer
+export default clinicsReducer
+export { fetchClinics }

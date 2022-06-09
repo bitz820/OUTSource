@@ -1,13 +1,8 @@
-import {configureStore} from "@reduxjs/toolkit"
+import {createStore, applyMiddleware} from 'redux'
+import thunkMiddleware from "redux-thunk"
+import rootReducer from './reducer'
 
-import clinicsReducer from "./Features/clinicsSlice"
-import userReducer from "./Features/usersSlice"
 
-const store = configureStore({
-    reducer: {
-        clinics: clinicsReducer,
-        user: userReducer
-    }
-});
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware))
 
 export default store

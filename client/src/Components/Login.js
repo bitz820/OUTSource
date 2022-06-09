@@ -1,22 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 
-import { fetchUser } from '../Features/usersSlice';
-
-
+import { fetchLogin } from '../Features/usersSlice';
 
 function Login() {
-
     const dispatch = useDispatch()
-
-    useEffect(() => {
-        dispatch(fetchUser());
-    }, [])
 
     const currentUser = useSelector(state => console.log(state))
 
-
-    const [user, setUser] = useState("")
     const [loginData, setLoginData] = useState({
         email: '',
         password: ''
@@ -26,27 +17,11 @@ function Login() {
 
     const loginUser = (e) => {
         e.preventDefault()
-
-        const configObj = {
-            method: "POST",
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify(loginData)
-        }
-
-        fetch("/login", configObj)
-            .then(r => {
-                if (r.ok) {
-                    r.json().then(userData => {
-                        console.log(userData)
-                        setUser(userData)
-                    })
-                } else {
-                    r.json().then(err => {
-                        console.log(err)
-                        // SET ERROR HERE
-                    })
-                }
-            })
+        dispatch(fetchLogin(loginData));
+        setLoginData({
+            email: '',
+            password: ''
+        })
     }
 
     const handleChange = (e) => {
@@ -57,8 +32,6 @@ function Login() {
             [key]: e.target.value
         })
     }
-
-    console.log(user)
 
     return (
         <>
@@ -78,7 +51,6 @@ function Login() {
             </div>
             <div>
                 Sign Up
-                
             </div>
         </>
     )

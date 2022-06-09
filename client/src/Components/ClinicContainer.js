@@ -7,7 +7,7 @@ const ClinicContainer = () => {
 
 
   // const [clinics, setClinics] = useState([]);
-  const allClinics = useSelector(state => (state.clinics.entities))
+  const allClinics = useSelector(state => (state.clinics.clinics))
 
   const dispatch = useDispatch()
 
