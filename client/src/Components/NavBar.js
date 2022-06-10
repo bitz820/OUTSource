@@ -1,8 +1,6 @@
 import React from 'react'
 import { NavLink } from "react-router-dom"
-import {useDispatch} from "react-redux"
-import {useNavigate } from "react-router-dom"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import styled from "styled-components"
 import { logoutUser } from '../Features/usersSlice'
 
@@ -29,14 +27,12 @@ const StyledLink = styled(NavLink)`
 
 function NavBar() {
     const dispatch = useDispatch()
-    const navigate = useNavigate()
 
     const user = useSelector(state => state.user)
 
 
     const handleLogout = () => {
         dispatch(logoutUser(user))
-        // navigate("/")
     }
 
     return (

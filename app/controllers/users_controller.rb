@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authorize, only: [:create, :index]
-    # CHANGE THIS BACK TO CREATE ONLY AFTER USING POSTMAN
+    skip_before_action :authorize, only: :create
 
     # List of All Users
     def index
@@ -43,8 +42,6 @@ class UsersController < ApplicationController
 
     def find_user
         user = User.find_by!(id: session[:user_id])
-        # user = User.find(params[:id])
-        # puts user
     end
 
     def user_params

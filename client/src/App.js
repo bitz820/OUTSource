@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { setUser } from "./Features/usersSlice";
 
 import NavBar from "./Components/NavBar"
@@ -13,7 +13,6 @@ import Signup from "./Components/Signup";
 
 
 function App() {
-  const navigate = useNavigate()
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -21,7 +20,7 @@ function App() {
   }, [])
 
 
-  const user = useSelector(state => console.log(state))
+  // const user = useSelector(state => state.user)
 
   return (
     <div className="App">

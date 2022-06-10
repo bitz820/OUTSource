@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom"
 
@@ -13,16 +13,22 @@ function Login() {
         password: ''
     })
 
+    const user = useSelector(state => state.user)
     const { email, password } = loginData
-
+    
     const loginUser = (e) => {
         e.preventDefault()
         dispatch(fetchLogin(loginData));
-        navigate("/")
         setLoginData({
             email: '',
             password: ''
         })
+        // console.log(user)
+        //     if(user.id){
+        //         navigate("/")
+        //     }else{
+        //         navigate("/login")
+        //     }
     }
 
     const handleChange = (e) => {
@@ -38,14 +44,24 @@ function Login() {
         <>
             <div>
                 <form onSubmit={loginUser}>
-                    Email:
-                    <input onChange={handleChange}
-                        value={email}
-                        name="email" type="email" />
-                    Password:
-                    <input onChange={handleChange}
-                        value={password}
-                        name="password" type="password" />
+                    <label>
+                        Email:
+                        <input
+                            onChange={handleChange}
+                            value={email}
+                            name="email"
+                            type="email"
+                        />
+                    </label>
+                    <label>
+                        Password:
+                        <input
+                            onChange={handleChange}
+                            value={password}
+                            name="password"
+                            type="password"
+                        />
+                    </label>
                     <input type="submit" />
                     {/* {error ? renderError : null} */}
                 </form>

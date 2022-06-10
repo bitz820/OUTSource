@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { fetchClinics } from "../Features/clinicsSlice";
 import ClinicCard from "./ClinicCard"
@@ -6,7 +6,6 @@ import ClinicCard from "./ClinicCard"
 const ClinicContainer = () => {
 
 
-  // const [clinics, setClinics] = useState([]);
   const allClinics = useSelector(state => state.clinics.clinics)
 
   const dispatch = useDispatch()
@@ -15,7 +14,6 @@ const ClinicContainer = () => {
     dispatch(fetchClinics())
   }, [dispatch]);
 
-  console.log(allClinics)
 
   const renderClinicCards = allClinics.map(clinic => <ClinicCard key={clinic.id} info={clinic} />)
 

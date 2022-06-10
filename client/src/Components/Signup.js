@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { useSelector, useDispatch } from "react-redux"
+import React, { useState } from 'react'
+import { useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
 
 import { createSignUp } from "../Features/usersSlice"
@@ -22,7 +22,7 @@ function Signup() {
         referred: ""
     })
 
-    const { first_name, last_name, email, password, age, gender, sexuality, reason_for_signup, referred } = signUpData
+    const { first_name, last_name, email, password, age } = signUpData
 
     const handleChange = (e) => {
         const key = e.target.name
