@@ -1,11 +1,19 @@
 import React from 'react'
+import {useDispatch, useSelector} from "react-redux"
+
+import {addFavoriteClinic} from "../Features/favoritesSlice"
 
 function ClinicCard({ info }) {
+    const dispatch = useDispatch()
+    const user = useSelector(state => state.user)
+
+    // console.log(user)
 
     const { id, name, location, city, zip, hours, services, phone, accepting_new_patients, takes_uninsured } = info
 
     const addToFavorites = () => {
-       
+        const favoriteObj = {clinic_id: id, user_id: user.id}
+        dispatch(addFavoriteClinic(favoriteObj))
     }
 
     return (

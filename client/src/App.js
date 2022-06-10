@@ -11,7 +11,7 @@ import ProfilePage from "./Components/ProfilePage";
 import Home from "./Components/Home";
 import Signup from "./Components/Signup";
 import EditProfile from "./Components/EditProfile"
-
+import "./App.css"
 
 function App() {
   const dispatch = useDispatch()

@@ -1,7 +1,9 @@
 
 puts "Seeding Users"
 
-User.create!(first_name: "Mark", last_name: "Bacon", email: "mark@gmail.com", password: "password", age: 29, gender: "Male", sexuality: "Gay", reason_for_signup: "PrEP", referred: "Provider")
+User.create!(first_name: "Mark", last_name: "Bacon", email: "mark@gmail.com", password: "test", age: 29, gender: "Male", sexuality: "Gay", reason_for_signup: "STI Testing", referred: "Provider")
+
+User.create!(first_name: "Brian", last_name: "Lego", email: "brian@gmail.com", password: "test", age: 28, gender: "Male", sexuality: "Gay", reason_for_signup: "PrEP", referred: "Friend")
 
 puts "Seeding Clinics"
 

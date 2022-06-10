@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+    has_many :favorites
+    has_many :clinics, through: :favorites
+
     has_secure_password
 
     validates :email, format: /\w+@\w+\.{1}[a-zA-Z]{2,}/, presence: true, uniqueness: true
@@ -6,6 +9,7 @@ class User < ApplicationRecord
     validates :age, numericality: {greater_than_or_equal_to: 18}
     
     validate :permitted_emails
+
 
     def permitted_emails
         unless email.match?(/gmail.com|yahoo.com|icloud.com/)
