@@ -18,10 +18,7 @@ function EditProfile() {
         email: userDetails.email,
         reason_for_signup: userDetails.reason_for_signup,
         referred: userDetails.referred,
-        // password: userDetails.password_digest
     })
-    console.log(userDetails)
-    // console.log(profile)
 
     const { first_name, last_name, gender, age, email, reason_for_signup, referred, sexuality } = userDetails
 

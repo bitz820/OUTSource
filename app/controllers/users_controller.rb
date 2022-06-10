@@ -33,9 +33,6 @@ class UsersController < ApplicationController
         head :no_content
     end
 
-
-
-
     private
 
     def find_user
