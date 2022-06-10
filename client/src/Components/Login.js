@@ -19,16 +19,16 @@ function Login() {
     const loginUser = (e) => {
         e.preventDefault()
         dispatch(fetchLogin(loginData));
+        if(user.id){
+            navigate("/")
+        }else{
+            navigate("/login")
+        }
         setLoginData({
             email: '',
             password: ''
         })
         // console.log(user)
-        //     if(user.id){
-        //         navigate("/")
-        //     }else{
-        //         navigate("/login")
-        //     }
     }
 
     const handleChange = (e) => {

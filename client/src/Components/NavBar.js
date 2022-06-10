@@ -47,7 +47,7 @@ function NavBar() {
                 {user.first_name}'s Saved Clinics
             </StyledLink>
             <StyledLink exact to="/profile" >
-                Edit Profile
+                Profile Details
             </StyledLink>
             {(user.id) ?
                 <StyledLink exact to="/" onClick={handleLogout}>Log Out</StyledLink>

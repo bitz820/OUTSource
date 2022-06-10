@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     # Updates a logged in User's Profile
     def update
         current_user = find_user
-        user.update!(user_params)
+        current_user.update!(user_params)
         render json: current_user, status: :ok
     end
 
@@ -45,5 +45,6 @@ class UsersController < ApplicationController
     def user_params
         params.permit(:first_name, :last_name, :email, :password, :gender, :age, :sexuality, :reason_for_signup, :referred)
     end
+
 
 end

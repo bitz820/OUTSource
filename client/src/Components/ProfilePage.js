@@ -14,6 +14,10 @@ const deleteUser = () => {
   navigate("/")
 }
 
+const goToEditProfile = () => {
+  navigate("/editProfile")
+}
+
 console.log(user)
   return (
     <div>
@@ -26,7 +30,7 @@ console.log(user)
       <p>Reason for Account: {user.reason_for_signup}</p>
       <p>How'd you hear about us? {user.referred}</p>
       <button onClick={deleteUser}>Delete Your Account</button>
-
+      <button onClick={goToEditProfile}>Edit Profile</button>
       </div>
   )
 }

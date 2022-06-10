@@ -10,6 +10,7 @@ import Login from "./Components/Login";
 import ProfilePage from "./Components/ProfilePage";
 import Home from "./Components/Home";
 import Signup from "./Components/Signup";
+import EditProfile from "./Components/EditProfile"
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route exact path="/clinics" element={<ClinicContainer />} />
         <Route exact path="/favorites" element={<Favorites />} />
         <Route exact path="/profile" element={<ProfilePage />} />
+        <Route exact path="/editProfile" element={<EditProfile />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<Signup />} />
       </Routes>

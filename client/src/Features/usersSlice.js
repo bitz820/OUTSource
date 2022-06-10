@@ -73,6 +73,7 @@ const logoutUser = () => {
     }
 }
 
+// Permanently Delete Account
 const deleteAccount = (id) => {
     return function (dispatch) {
         fetch(`/users/${id}`, { method: "DELETE" })
@@ -87,24 +88,47 @@ const deleteAccount = (id) => {
     }
 }
 
-    const userReducer = (state = initialState, action) => {
-        switch (action.type) {
-            case "login":
-                return action.payload
+// Update User Account Details 
+const updateAccountDetails = (user) => {
+    return function (dispatch) {
+        fetch(`users/${user.id}`, {
+            method: "PATCH",
+            headers: { 'Content-Type': 'application/json', "Accept": 'application/json' },
+            body: JSON.stringify(user)
+        })
+            .then(r => {
+                if (r.ok) {
+                    r.json().then(user => dispatch({ type: "update", payload: user }))
+                }
+                else {
+                    r.json().then(err => console.log(err))
+                }
+            })
 
-            case "logout":
-                return action.payload
-
-            case "signup":
-                return action.payload
-
-            case "delete":
-                return action.payload
-
-            default:
-                return state
-        }
     }
+}
 
-    export default userReducer
-    export { fetchLogin, logoutUser, createSignUp, setUser, deleteAccount }
+const userReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case "login":
+            return action.payload
+
+        case "logout":
+            return action.payload
+
+        case "signup":
+            return action.payload
+
+        case "delete":
+            return action.payload
+
+        case "update":
+            return action.payload
+
+        default:
+            return state
+    }
+}
+
+export default userReducer
+export { fetchLogin, logoutUser, createSignUp, setUser, deleteAccount, updateAccountDetails }
