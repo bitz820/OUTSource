@@ -19,9 +19,6 @@ function App() {
     dispatch(setUser())
   }, [])
 
-
-  // const user = useSelector(state => state.user)
-
   return (
     <div className="App">
       <NavBar />

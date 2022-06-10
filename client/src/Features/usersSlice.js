@@ -1,7 +1,6 @@
 
 const initialState = {}
 
-
 const setUser = () => {
     return function (dispatch) {
         fetch("/me")
@@ -73,11 +72,9 @@ const logoutUser = (user) => {
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
         case "login":
-            console.log(action)
             return action.payload
 
         case "logout":
-            console.log(action)
             return action.payload
 
         case "signup":
