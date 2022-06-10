@@ -8,9 +8,7 @@ class UsersController < ApplicationController
 
     # Shows a Current Logged in User (given that they are authorized, which looks at session)
     def show
-
         current_user = find_user
-
         render json: current_user, status: :ok
     end
 

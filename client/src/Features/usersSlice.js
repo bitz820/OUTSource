@@ -1,6 +1,7 @@
 
 const initialState = {}
 
+// Authorize User is still Logged In
 const setUser = () => {
     return function (dispatch) {
         fetch("/me")
@@ -14,6 +15,7 @@ const setUser = () => {
     }
 }
 
+// Sign Up for Account
 const createSignUp = (user) => {
     return function (dispatch) {
         fetch("/signup", {
@@ -34,6 +36,7 @@ const createSignUp = (user) => {
     }
 }
 
+// Fetch User Information
 const fetchLogin = (user) => {
     return function (dispatch) {
         fetch("/login", {
@@ -55,7 +58,8 @@ const fetchLogin = (user) => {
     }
 }
 
-const logoutUser = (user) => {
+// Log User Out
+const logoutUser = () => {
     return function (dispatch) {
         fetch("/logout", { method: "DELETE" })
             .then(r => {
@@ -69,21 +73,38 @@ const logoutUser = (user) => {
     }
 }
 
-const userReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case "login":
-            return action.payload
-
-        case "logout":
-            return action.payload
-
-        case "signup":
-            return action.payload
-
-        default:
-            return state
+const deleteAccount = (id) => {
+    return function (dispatch) {
+        fetch(`/users/${id}`, { method: "DELETE" })
+            .then(r => {
+                console.log(r)
+                if (r.ok) {
+                    dispatch({ type: "delete", payload: {} })
+                } else {
+                    r.json().then(err => console.log(err))
+                }
+            })
     }
 }
 
-export default userReducer
-export { fetchLogin, logoutUser, createSignUp, setUser }
+    const userReducer = (state = initialState, action) => {
+        switch (action.type) {
+            case "login":
+                return action.payload
+
+            case "logout":
+                return action.payload
+
+            case "signup":
+                return action.payload
+
+            case "delete":
+                return action.payload
+
+            default:
+                return state
+        }
+    }
+
+    export default userReducer
+    export { fetchLogin, logoutUser, createSignUp, setUser, deleteAccount }

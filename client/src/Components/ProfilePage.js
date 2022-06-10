@@ -1,10 +1,18 @@
 import React from 'react'
-import {useSelector} from "react-redux"
+import {useNavigate} from "react-router-dom"
+import {useSelector, useDispatch} from "react-redux"
+
+import {deleteAccount} from "../Features/usersSlice"
 
 function ProfilePage() {
 const user = useSelector(state => state.user)
+const dispatch = useDispatch()
+const navigate = useNavigate()
 
-
+const deleteUser = () => {
+  dispatch(deleteAccount(user.id))
+  navigate("/")
+}
 
 console.log(user)
   return (
@@ -17,6 +25,7 @@ console.log(user)
       <p>Sexuality: {user.sexuality}</p>
       <p>Reason for Account: {user.reason_for_signup}</p>
       <p>How'd you hear about us? {user.referred}</p>
+      <button onClick={deleteUser}>Delete Your Account</button>
 
       </div>
   )
