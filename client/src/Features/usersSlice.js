@@ -1,5 +1,17 @@
-const initialState = {
-    user: {}
+const initialState = {}
+
+
+const setUser = () => {
+    return function (dispatch) {
+        fetch("/me")
+            .then(r => {
+                if (r.ok) {
+                    r.json().then(user => dispatch({ type: "login", payload: user }))
+                } else {
+                    r.json().then(err => console.log(err))
+                }
+            })
+    }
 }
 
 const createSignUp = (user) => {
@@ -14,8 +26,8 @@ const createSignUp = (user) => {
         })
             .then(r => {
                 if (r.ok) {
-                    r.json().then(user => dispatch({ type: "signup", payload: user}))
-                }else {
+                    r.json().then(user => dispatch({ type: "signup", payload: user }))
+                } else {
                     r.json().then(err => console.log(err))
                 }
             })
@@ -43,14 +55,14 @@ const fetchLogin = (user) => {
     }
 }
 
-const handleLogout = user => {
+const logoutUser = (user) => {
     return function (dispatch) {
-        fetch("logout", { method: "DELETE" })
+        fetch("/logout", { method: "DELETE" })
             .then(r => {
+                console.log(r)
                 if (r.ok) {
-                    r.json().then(user => dispatch({ type: "logout", payload: user }))
-                }
-                else {
+                    dispatch({ type: "logout", payload: {} })
+                } else {
                     r.json().then(err => console.log(err))
                 }
             })
@@ -60,64 +72,20 @@ const handleLogout = user => {
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
         case "login":
-            return {
-                ...state,
-                user: action.payload
-            }
+            console.log(action)
+            return action.payload
+
         case "logout":
-            return {
-                ...state,
-                user: action.payload
-            }
+            console.log(action)
+            return action.payload
+
         case "signup":
-            return {
-                ...state,
-                user: action.payload
-            }
+            return action.payload
+
         default:
             return state
     }
 }
 
 export default userReducer
-export { fetchLogin, handleLogout, createSignUp }
-
-
-
-
-
-
-
-
-
-
-// import {createAsyncThunk, createSlice} from "@reduxjs/toolkit"
-
-// export const fetchUser = createAsyncThunk("users/fetchUser", () => {
-//     return fetch("/login")
-//     .then(r => r.json())
-//     .then(data => data)
-// });
-
-// const userSlice = createSlice({
-//     name:"users",
-//     initialState: {
-//         entities: [],
-//         status: "idle"
-//     },
-//     reducers: {
-
-//     },
-//     extraReducers: {
-//         [fetchUser.pending](state){
-//             state.status = "loading";
-//         },
-//         [fetchUser.fulfilled](state, action){
-//             console.log(action.payload)
-//             state.entities = action.payload
-//             state.status = "idle";
-//         }
-//     }
-// })
-
-// export default userSlice.reducer
+export { fetchLogin, logoutUser, createSignUp, setUser }

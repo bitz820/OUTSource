@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import {Link} from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 import { fetchLogin } from '../Features/usersSlice';
 
 function Login() {
     const dispatch = useDispatch()
-
+    const navigate = useNavigate()
 
     const [loginData, setLoginData] = useState({
         email: '',
@@ -18,6 +18,7 @@ function Login() {
     const loginUser = (e) => {
         e.preventDefault()
         dispatch(fetchLogin(loginData));
+        navigate("/")
         setLoginData({
             email: '',
             password: ''
@@ -50,7 +51,7 @@ function Login() {
                 </form>
             </div>
             <div>
-            or you can <Link to="/signup"> Sign Up</Link>
+                or you can <Link to="/signup"> Sign Up</Link>
             </div>
         </>
     )

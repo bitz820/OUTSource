@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authorize, only: [:create, :index, :show]
+    skip_before_action :authorize, only: [:create, :index]
     # CHANGE THIS BACK TO CREATE ONLY AFTER USING POSTMAN
 
     # List of All Users
@@ -9,7 +9,9 @@ class UsersController < ApplicationController
 
     # Shows a Current Logged in User (given that they are authorized, which looks at session)
     def show
+
         current_user = find_user
+
         render json: current_user, status: :ok
     end
 
@@ -41,6 +43,8 @@ class UsersController < ApplicationController
 
     def find_user
         user = User.find_by!(id: session[:user_id])
+        # user = User.find(params[:id])
+        # puts user
     end
 
     def user_params

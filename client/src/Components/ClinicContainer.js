@@ -7,7 +7,7 @@ const ClinicContainer = () => {
 
 
   // const [clinics, setClinics] = useState([]);
-  const allClinics = useSelector(state => (state.clinics.clinics))
+  const allClinics = useSelector(state => state.clinics.clinics)
 
   const dispatch = useDispatch()
 
@@ -16,6 +16,7 @@ const ClinicContainer = () => {
   }, [dispatch]);
 
   console.log(allClinics)
+
   const renderClinicCards = allClinics.map(clinic => <ClinicCard key={clinic.id} info={clinic} />)
 
 

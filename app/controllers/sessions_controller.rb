@@ -18,10 +18,9 @@ class SessionsController < ApplicationController
 
     # Logging a User out of the app (destroys the current session)
     def destroy
+        # reset_session
         session.delete :user_id
         head :no_content
     end
-
-
 
 end

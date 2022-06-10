@@ -1,7 +1,10 @@
 import React from 'react'
 import { NavLink } from "react-router-dom"
-import {useSelector} from "react-redux"
+import {useDispatch} from "react-redux"
+import {useNavigate } from "react-router-dom"
+import { useSelector } from "react-redux"
 import styled from "styled-components"
+import { logoutUser } from '../Features/usersSlice'
 
 const NavStyle = styled.div`
     display: flex;
@@ -24,11 +27,17 @@ const StyledLink = styled(NavLink)`
     color: white;
 `
 
-
 function NavBar() {
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
-    const currentUser = useSelector(state => (state.user.user.name))
-    console.log(currentUser)
+    const user = useSelector(state => state.user)
+
+
+    const handleLogout = () => {
+        dispatch(logoutUser(user))
+        // navigate("/")
+    }
 
     return (
         <NavStyle>
@@ -39,14 +48,16 @@ function NavBar() {
                 Browse Care
             </StyledLink>
             <StyledLink exact to="/favorites" >
-                {currentUser}'s Saved Clinics
+                {user.first_name}'s Saved Clinics
             </StyledLink>
             <StyledLink exact to="/profile" >
                 Edit Profile
             </StyledLink>
-            <StyledLink exact to="/login" >
-                Login
-            </StyledLink>
+            {(user.id) ?
+                <StyledLink exact to="/" onClick={handleLogout}>Log Out</StyledLink>
+                :
+                <StyledLink exact to="/login">Login</StyledLink>
+            }
         </NavStyle>
     )
 }

@@ -1,7 +1,7 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUser } from "./Features/usersSlice";
+import { setUser } from "./Features/usersSlice";
 
 import NavBar from "./Components/NavBar"
 import ClinicContainer from "./Components/ClinicContainer";
@@ -13,10 +13,15 @@ import Signup from "./Components/Signup";
 
 
 function App() {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
-  
+  useEffect(() => {
+    dispatch(setUser())
+  }, [])
 
 
+  const user = useSelector(state => console.log(state))
 
   return (
     <div className="App">
