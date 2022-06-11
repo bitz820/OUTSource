@@ -27,3 +27,9 @@
 .favorite-card .left {
     background-color: red;
 }
+
+.services-container img {
+    padding: 10px;
+    height: 75px;
+    width: 75px;
+}
