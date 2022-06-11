@@ -51,7 +51,7 @@ function ClinicCard({ info }) {
     }
 
     return (
-        <div style={{ border: '1px solid black', display: 'flex', flexFlow: 'column', alignItems: 'center', margin: "15px" }}>
+        <div className="clinic-card" >
             <h2>{name}</h2>
             <span>{location}, {city}, TX {zip}</span>
             <div className="services-container">

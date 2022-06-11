@@ -24,14 +24,33 @@
 
 }
 
+.search-container {
+    text-align: center;
+}
+
 .favorite-card .left {
     background-color: red;
 }
 
-.services-container{
+.clinic-container {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+}
+
+.clinic-card {
+    border: 1px solid black;
+    display: flex;
+    max-width: 550px;
+    max-height: 550px;
+    flex-flow: column;
+    align-items: center;
+    margin: 15px
+}
+
+.services-container {
     display: flex;
     flex-flow: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 
@@ -39,10 +58,11 @@
     margin: 0px 30px;
     height: 75px;
     width: 75px;
-    }
+}
 
-    .service {
-        display: flex;
-        flex-flow: column;
-        text-align: center;
-    }
+.service {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+}
+

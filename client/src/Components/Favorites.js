@@ -15,13 +15,11 @@ function Favorites() {
   //   navigate("/")
   // }
 
-
   useEffect(() => {
     dispatch(fetchFavorites())
   }, [dispatch])
 
 const renderFavorites = favoritedClinics.map(fav => <FavoriteCard key={fav.id} data={fav.clinic}/>)
-
 
 return (
 
