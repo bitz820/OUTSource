@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {useNavigate} from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
 
@@ -9,7 +10,7 @@ import { createSignUp } from "../Features/usersSlice"
 
 function Signup() {
     const dispatch = useDispatch()
-
+    const navigate = useNavigate()
     const [signUpData, setSignUpData] = useState({
         first_name: "",
         last_name: "",
@@ -35,7 +36,18 @@ function Signup() {
 
     const signUserUp = (e) => {
         e.preventDefault()
-        dispatch(createSignUp(signUpData))
+        dispatch(createSignUp(signUpData, navigate))
+        setSignUpData({
+            first_name: "",
+            last_name: "",
+            email: "",
+            password: "",
+            age: null,
+            gender: "",
+            sexuality: "",
+            reason_for_signup: "",
+            referred: ""
+        })
     }
 
     console.log(signUpData)

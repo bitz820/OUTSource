@@ -38,8 +38,6 @@ Clinic.create!(name: "Center for Health Empowerment", location: "4534 West Gate 
 
 Clinic.create!(name: "Austin Oaks Hospital", location: "1407 West Stassney Lane", city: "Austin", zip: "78745", hours: "M-F 8:30-5:00", phone: "(512) 675 6257", services: "Counseling", accepting_new_patients: true, takes_uninsured: false)
 
-Clinic.create!(name: "ASHWell", location: "3100 Red River St", city: "Austin", zip: "78705", hours: "M-F 10:00-1:30", phone: "(512) 467 0088", services: "HIV Testing, PrEP, STI Testing, Counseling", accepting_new_patients: true, takes_uninsured: true)
-
 Clinic.create!(name: "Austin Lakes Hospital", location: "1025 East 32nd Street", city: "Austin", zip: "78705", hours: "M-F 8:00-8:00", phone: "(512) 544 5951", services: "Counseling", accepting_new_patients: true, takes_uninsured: false)
 
 Clinic.create!(name: "The Source Austin", location: "8401 N Interstate Hwy 35", city: "Austin", zip: "78753", hours: "M-F 9:30-5:30", phone: "(512) 374 0055", services: "HIV Testing, STI Testing", accepting_new_patients: true, takes_uninsured: true)

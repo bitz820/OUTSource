@@ -18,12 +18,7 @@ function Login() {
     
     const loginUser = (e) => {
         e.preventDefault()
-        dispatch(fetchLogin(loginData));
-        if(user.id){
-            navigate("/")
-        }else{
-            navigate("/login")
-        }
+        dispatch(fetchLogin(loginData, navigate));
         setLoginData({
             email: '',
             password: ''

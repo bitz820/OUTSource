@@ -16,7 +16,7 @@ const setUser = () => {
 }
 
 // Sign Up for Account
-const createSignUp = (user) => {
+const createSignUp = (user, navigate) => {
     return function (dispatch) {
         fetch("/signup", {
             method: "POST",
@@ -28,7 +28,11 @@ const createSignUp = (user) => {
         })
             .then(r => {
                 if (r.ok) {
-                    r.json().then(user => dispatch({ type: "signup", payload: user }))
+                    r.json().then(user => {
+                        console.log(navigate)
+                        dispatch({ type: "signup", payload: user })
+                        navigate("/")
+                    })
                 } else {
                     r.json().then(err => console.log(err))
                 }
@@ -37,7 +41,7 @@ const createSignUp = (user) => {
 }
 
 // Fetch User Information
-const fetchLogin = (user) => {
+const fetchLogin = (user, navigate) => {
     return function (dispatch) {
         fetch("/login", {
             method: "POST",
@@ -49,10 +53,16 @@ const fetchLogin = (user) => {
         })
             .then(r => {
                 if (r.ok) {
-                    r.json().then(user => dispatch({ type: "login", payload: user }))
+                    r.json().then(user => {
+                        dispatch({ type: "login", payload: user })
+                        navigate("/")
+                    })
                 }
                 else {
-                    r.json().then(err => console.log(err))
+                    r.json().then(err => {
+                        console.log(err)
+                        navigate("/login")
+                    })
                 }
             })
     }
