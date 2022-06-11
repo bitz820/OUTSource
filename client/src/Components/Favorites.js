@@ -7,12 +7,13 @@ function Favorites() {
   const dispatch = useDispatch()
 
   const favoritedClinics = useSelector(state => state.favorites)
+  console.log(favoritedClinics)
 
   useEffect(() => {
     dispatch(fetchFavorites())
   }, [dispatch])
 
-const renderFavorites = favoritedClinics.map(fav => <FavoriteCard key={fav.clinic.id} data={fav.clinic}/>)
+const renderFavorites = favoritedClinics.map(fav => <FavoriteCard key={fav.id} data={fav.clinic}/>)
 
 
 return (

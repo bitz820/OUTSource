@@ -1,12 +1,27 @@
 import React from 'react'
+import { useDispatch, useSelector } from "react-redux"
+
+import { deleteFavorite } from "../Features/favoritesSlice"
 
 function FavoriteCard({ data }) {
-  console.log(data)
+console.log(data)
+
+  const favClinic = useSelector(state => state.favorites.find(favorite => favorite.clinic.id === data.id))
+
+  
+  const dispatch = useDispatch()
+  
   const { name, location, services, hours, zip, accepting_new_patients, city, phone, takes_uninsured } = data
 
+  
   const redirectToWebsite = () => {
     console.log("YOU HAVE WORK TO DO HERE MARK")
     // SHOULD GRAB WEBSITE FROM COLUMN (NEED A NEW MIGRATION!!)
+  }
+  
+  const removeFavorite = () => {
+
+    dispatch(deleteFavorite(favClinic.id))
   }
 
   // if accepting new patients, link to webiste to scheudule appt!
@@ -22,6 +37,7 @@ function FavoriteCard({ data }) {
         <p>{location} </p>
         <p>{city}, TX {zip}</p>
         <p>Open: {hours}</p>
+        <button onClick={removeFavorite}>Remove from Favorites</button>
       </div>
       {/* Right Side of Card */}
       <div>

@@ -8,7 +8,8 @@ class FavoritesController < ApplicationController
     end
 
     def create
-        render json: Favorite.create!(favorite_params), status: :created
+        favorite =  Favorite.create!(favorite_params)
+        render json: favorite, status: :created
     end
 
     def update
@@ -23,15 +24,17 @@ class FavoritesController < ApplicationController
     def destroy
         current_user = User.find_by!(id: session[:user_id])
         favorites = current_user.favorites
-        favorite = favorites.find_by(clinic_id: params[:id])
+        favorite = favorites.find(params[:id])
         favorite.destroy
         head :no_content
+        #render json: {}, status: :ok
+
     end
 
     private
 
     def favorite_params
-        params.permit(:user_id, :clinic_id)
+        params.permit(:id, :user_id, :clinic_id)
     end
 
 
