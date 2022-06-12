@@ -10,7 +10,7 @@ const ClinicContainer = () => {
   const [serviceFilter, setServiceFilter] = useState("")
 
   const allClinics = useSelector(state => state.clinics.clinics)
-
+console.log(allClinics)
   const dispatch = useDispatch()
 
   useEffect(() => {

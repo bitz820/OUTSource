@@ -29,7 +29,7 @@ class ClinicsController < ApplicationController
     private
 
     def clinic_params
-        params.permit(:name, :location, :services, :hours, :accepting_new_patients, :takes_uninsured, :phone, :city, :zip)
+        params.permit(:name, :location, :services, :hours, :url, :accepting_new_patients, :takes_uninsured, :phone, :city, :zip)
     end
 
 end

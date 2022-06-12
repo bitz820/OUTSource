@@ -47,9 +47,6 @@ function Footer() {
                 <div className='footer-link-wrapper'>
                     <div className='footer-link-items'>
                         <h2>About Us</h2>
-                        <NavLink to='/signup'>
-                            How we work
-                        </NavLink>
                         <a
                             href='https://www.linkedin.com/in/mark-bacon-jr/details/recommendations/'
                             target='_blank'
@@ -78,6 +75,9 @@ function Footer() {
                         >
                             Terms of Service
                         </a>
+                        <NavLink to='/signup'>
+                            How we work
+                        </NavLink>
                     </div>
                     <div className='footer-link-items'>
                         <h2>Resources</h2>
