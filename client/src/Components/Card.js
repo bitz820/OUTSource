@@ -1,14 +1,17 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import {Button} from "../Components/Button"
 import { useDispatch, useSelector } from "react-redux"
+import { Button } from "../Components/Button"
+
 import hivPic from "../media/hiv.png"
 import prepPic from "../media/prep.png"
 import psyPic from "../media/psy.png"
 import stiPic from "../media/sti.png"
 
+import "./Card.css"
 
-function Card({info}) {
+import { addFavoriteClinic } from "../Features/favoritesSlice"
+
+function Card({ info }) {
 
     const dispatch = useDispatch()
     const user = useSelector(state => state.user)
@@ -46,37 +49,30 @@ function Card({info}) {
             <p>PrEP</p>
         </div> : null
 
+    const addToFavorites = () => {
+        const favoriteObj = { clinic_id: id, user_id: user.id }
+        dispatch(addFavoriteClinic(favoriteObj))
+    }
+
+
 
     return (
         <div>
-            <div className="card__section">
-                <div className="card__wrapper">
-                    <h1 className="card__heading">
-                        CLINIC
-                    </h1>
-                    <div className="card__container">
-                        <NavLink to="/signup" className="card__container-card">
-                            <div className="card__container-cardInfo">
-                                <div className='icon'>
-                                {hivLogo} {prepLogo} {stiLogo}  {psyLogo}
-                                </div>
-                                <h3>Starter</h3>
-                                <h4>$8.99</h4>
-                                <p>Per Month</p>
-
-                                <ul className="card__container-features">
-                                    <li>100 Transactions</li>
-                                    <li>2% Cash Back</li>
-                                    <li>10000 Limit</li>
-                                </ul>
-                                <Button buttonSize="btn--wide" buttonColor="primary">Choose Plan </Button>
-                                </div>
-                        </NavLink>
+            <div className="card">
+                <div className="card__body">
+                    <h1 className="card__title">{name} </h1>
+                        <span>{location}, {city}, TX {zip}</span>
+                    <div className='card__description'>
+                        {hivLogo} {prepLogo} {stiLogo}  {psyLogo}
                     </div>
+                    <h3 className="card__price">Open {hours}
+                        <br />
+                        {phone}
+                    </h3>
+                    <Button onClick={addToFavorites} buttonSize="btn--wide" buttonColor="primary">Favorite This Clinic </Button>
                 </div>
-
             </div>
-        </div >
+        </div>
     )
 }
 

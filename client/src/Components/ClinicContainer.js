@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { fetchClinics } from "../Features/clinicsSlice";
-import ClinicCard from "./ClinicCard"
+
+import Card from "./Card"
 
 const ClinicContainer = () => {
   const [insuranceChecked, setInsuranceChecked] = useState(false)
@@ -26,7 +27,7 @@ const ClinicContainer = () => {
   const showNewPatientsOnly = newPatientChecked ? showUninsuredClinics.filter(c => c.accepting_new_patients === newPatientChecked) : showUninsuredClinics
   console.log(showNewPatientsOnly)
 
-  const renderClinicCards = showNewPatientsOnly.map(clinic => <ClinicCard key={clinic.id} info={clinic} />)
+  const renderClinicCards = showNewPatientsOnly.map(clinic => <Card key={clinic.id} info={clinic} />)
   return (
     <div>
       <h1>Clinics</h1>
@@ -62,7 +63,7 @@ const ClinicContainer = () => {
           Search Only Clinics Accepting New Patients
         </label>
       </div>
-      <div className="clinic-container">
+      <div className="wrapper">
         {renderClinicCards}
       </div>
     </div>

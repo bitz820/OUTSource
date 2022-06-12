@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import FavoriteCard from './FavoriteCard'
 import { fetchFavorites } from "../Features/favoritesSlice"
 
-function Favorites() {
+function FavoritesContainer() {
   const dispatch = useDispatch()
   // const navigate = useNavigate()
   const favoritedClinics = useSelector(state => state.favorites)
@@ -31,4 +31,4 @@ return (
   )
 }
 
-export default Favorites
+export default FavoritesContainer

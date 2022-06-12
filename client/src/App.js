@@ -5,7 +5,7 @@ import { setUser } from "./Features/usersSlice";
 
 import NavBar from "./Components/NavBar"
 import ClinicContainer from "./Components/ClinicContainer";
-import Favorites from "./Components/Favorites";
+import FavoritesContainer from "./Components/FavoritesContainer"
 import Login from "./Components/Login";
 import ProfilePage from "./Components/ProfilePage";
 import Home from "./Components/Home";
@@ -27,7 +27,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/clinics" element={<ClinicContainer />} />
-        <Route exact path="/favorites" element={<Favorites />} />
+        <Route exact path="/favorites" element={<FavoritesContainer />} />
         <Route exact path="/profile" element={<ProfilePage />} />
         <Route exact path="/editProfile" element={<EditProfile />} />
         <Route exact path="/login" element={<Login />} />
