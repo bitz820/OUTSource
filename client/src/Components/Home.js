@@ -4,7 +4,7 @@ function Home() {
   return (
     <div>
       <h1>OUTSource</h1>
-      <em>Queer Services Simplified</em>
+      <em>Queer Care. Simple.</em>
 
     </div>
   )

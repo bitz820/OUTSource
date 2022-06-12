@@ -11,6 +11,7 @@ import ProfilePage from "./Components/ProfilePage";
 import Home from "./Components/Home";
 import Signup from "./Components/Signup";
 import EditProfile from "./Components/EditProfile"
+import Footer from "./Components/pages/Footer"
 import "./App.css"
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<Signup />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

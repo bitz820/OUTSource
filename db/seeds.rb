@@ -9,6 +9,10 @@ puts "Seeding Clinics"
 
 Clinic.create!(name: "CommUnityCare Health Centers", location: "500 E 7th St", city: "Austin", zip: "78701", hours: "M-F 7:30-4:30", phone: "(512) 978 9920", services: "HIV Testing, STI Testing, Counseling", accepting_new_patients: true, takes_uninsured: true)
 
+Clinic.create!(name: "Vivent Health", location: "1023 Springdale Rd", city: "Austin", zip: "78721", hours: "M-F 8:00-5:00", phone: "(512) 600 8378", services: "HIV Testing, PrEP", accepting_new_patients: true, takes_uninsured: false)
+
+Clinic.create!(name: "Austin Regional Clinic", location: "3828 S 1st St", city: "Austin", zip: "78704", hours: "M-F 7:30-5:00", phone: "(512) 443 1311", services: "PrEP", accepting_new_patients: false, takes_uninsured: false)
+
 Clinic.create!(name: "Austin Public Health", location: "15 Waller St", city: "Austin", zip: "78702", hours: "M-F 8:00-5:00", phone: "(512) 972 5430", services: "HIV Testing, STI Testing", accepting_new_patients: true, takes_uninsured: true)
 
 Clinic.create!(name: "Planned Parenthood of Greater Texas", location: "2911 Medical Arts St", city: "Austin", zip: "78705", hours: "Th-F 9:00-5:00", phone: "(512) 477 5846", services: "HIV Testing, PrEP, STI Testing", accepting_new_patients: true, takes_uninsured: true)
@@ -24,11 +28,6 @@ Clinic.create!(name: "TIN Rx", location: "3706 Guadalupe St", city: "Austin", zi
 Clinic.create!(name: "Lone Star Circle of Care", location: "3000 Oak Springs", city: "Austin", zip: "78702", hours: "M-F 8:00-5:00", phone: "(877) 800 5722", services: "HIV Testing, PrEP, STI Testing",  accepting_new_patients: true, takes_uninsured: false)
 
 Clinic.create!(name: "Texas Health Action", location: "2800 S I- 35 Frontage Rd", city: "Austin", zip: "78704", hours: "M-T-F 9:00-5:00, W-Th 9:00-8:00", phone: "(833) 937 5463", services: "HIV Testing, PrEP", accepting_new_patients: true, takes_uninsured: true)
-
-Clinic.create!(name: "Vivent Health", location: "1023 Springdale Rd", city: "Austin", zip: "78721", hours: "M-F 8:00-5:00", phone: "(512) 600 8378", services: "HIV Testing, PrEP", accepting_new_patients: true, takes_uninsured: false)
-
-Clinic.create!(name: "Austin Regional Clinic", location: "3828 S 1st St", city: "Austin", zip: "78704", hours: "M-F 7:30-5:00", phone: "(512) 443 1311", services: "PrEP", accepting_new_patients: false, takes_uninsured: false)
-
 
 Clinic.create!(name: "South Austin Medical Clinic", location: "2555 Western Trails Blvd", city: "Austin", zip: "78745", hours: "M-F 7:00-5:00", phone: "(512) 892 6600", services: "PrEP", accepting_new_patients: true, takes_uninsured: true)
 
