@@ -12,14 +12,15 @@ import Home from "./Components/Home";
 import Signup from "./Components/Signup";
 import EditProfile from "./Components/EditProfile"
 import Footer from "./Components/pages/Footer"
+import ProtectedRoutes from "./Components/ProtectedRoutes"
 import "./App.css"
 
 function App() {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(setUser())
-  }, [])
+  // useEffect(() => {
+  //   dispatch(setUser())
+  // }, [])
 
   return (
     <div className="App">
@@ -27,9 +28,11 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/clinics" element={<ClinicContainer />} />
-        <Route exact path="/favorites" element={<FavoritesContainer />} />
-        <Route exact path="/profile" element={<ProfilePage />} />
-        <Route exact path="/editProfile" element={<EditProfile />} />
+        <Route element={<ProtectedRoutes />}>
+          <Route exact path="/favorites" element={<FavoritesContainer />} />
+          <Route exact path="/profile" element={<ProfilePage />} />
+          <Route exact path="/editProfile" element={<EditProfile />} />
+        </Route>
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<Signup />} />
       </Routes>

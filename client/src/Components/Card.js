@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import { Button } from "../Components/Button"
+import { Button } from "./pages/Button"
 
 import hivPic from "../media/hiv.png"
 import prepPic from "../media/prep.png"

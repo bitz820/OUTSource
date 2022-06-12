@@ -5,7 +5,7 @@ import { GiRainbowStar } from "react-icons/gi"
 import { FaBars, FaTimes } from "react-icons/fa"
 import "./pages/NavBar.css"
 import styled from "styled-components"
-import { Button } from "./Button"
+import { Button } from "./pages/Button"
 import { logoutUser } from '../Features/usersSlice'
 
 
@@ -24,11 +24,11 @@ function NavBar() {
         handleLogout()
     }
 
-    
+
     const showButton = () => {
-        if (window.innerWidth <=960){
+        if (window.innerWidth <= 960) {
             setButton(false)
-        }else setButton(true)
+        } else setButton(true)
     }
     window.addEventListener("resize", showButton)
 
@@ -56,7 +56,7 @@ function NavBar() {
                         </li>
                         <li className='nav-item'>
                             <NavLink onClick={closeMobileMenu} className="nav-links" exact to="/favorites" >
-                                {user.first_name}'s Saved Clinics
+                                {user.id ? `${user.first_name}'s Saved Clinics` : "Saved Clinics"}
                             </NavLink>
                         </li>
                         <li className='nav-item'>
@@ -71,17 +71,20 @@ function NavBar() {
                                 <NavLink className="nav-links" onClick={closeMobileMenu} exact to="/login">Login</NavLink>
                             }
                         </li>
-                        <li className='nav-btn'>
-                            {button ? (
-                                <NavLink exact to="/signup" onClick={closeMobileMenu} className="btn-link">
-                                    <Button buttonStyle="btn--outline">Sign Up!</Button>
-                                </NavLink>
-                            ) :
-                                <NavLink exact to="/signup" onClick={closeMobileMenu} className="btn-link">
-                                    <Button buttonStyle="btn--outline" buttonSize="mobile">Sign Up!</Button>
-                                </NavLink>
-                            }
-                        </li>
+                        {user.id ? null :
+                            <li className='nav-btn'>
+                                {button ? (
+                                    <NavLink exact to="/signup" onClick={closeMobileMenu} className="btn-link">
+                                        <Button buttonStyle="btn--outline">Sign Up!</Button>
+                                    </NavLink>
+                                ) :
+                                    <NavLink exact to="/signup" onClick={closeMobileMenu} className="btn-link">
+                                        <Button buttonStyle="btn--outline" buttonSize="mobile">Sign Up!</Button>
+                                    </NavLink>
+                                }
+                            </li>
+                        }
+
 
                     </ul>
                 </div>

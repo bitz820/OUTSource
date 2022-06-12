@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Footer.css';
-import { Button } from '../Button';
+import { Button } from './Button';
 import { NavLink, useNavigate } from 'react-router-dom';
 import {
     FaBlogger,

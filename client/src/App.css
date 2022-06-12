@@ -32,7 +32,7 @@
     background-color: red;
 }
 
-.clinic-container {
+/* .clinic-container {
     display: grid;
     grid-template-columns: 2fr 2fr;
 }
@@ -45,7 +45,7 @@
     flex-flow: column;
     align-items: center;
     margin: 15px
-}
+} */
 
 .services-container {
     display: flex;
