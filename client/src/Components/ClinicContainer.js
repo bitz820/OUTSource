@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { fetchClinics } from "../Features/clinicsSlice";
-
+import { motion } from 'framer-motion'
 import Card from "./Card"
 
 const ClinicContainer = () => {
@@ -63,9 +63,9 @@ console.log(allClinics)
           Search Only Clinics Accepting New Patients
         </label>
       </div>
-      <div className="wrapper">
+      <motion.div layout className="wrapper">
         {renderClinicCards}
-      </div>
+      </motion.div>
     </div>
   )
 }

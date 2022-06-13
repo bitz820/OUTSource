@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { Button } from "./pages/Button"
 import { toast } from "react-toastify"
 import randomColor from "randomcolor";
+import { motion } from 'framer-motion'
 // import { CardStyle } from './Styles'
 
 
@@ -69,8 +70,8 @@ function Card({ info }) {
 
 
     return (
-        <div >
-            {/* <div className='wrapper'> */}
+        <motion.div layout >
+            <div className='wrapper'>
                 <div className="card" style={{ backgroundColor: color }}>
                     <div className="card__body">
                         <h1 className="card__title">{name} </h1>
@@ -80,14 +81,14 @@ function Card({ info }) {
                         <div className='card__description'>
                             {hivLogo} {prepLogo} {stiLogo}  {psyLogo}
                         </div>
-                        <h3 className="card__price">Open {hours}
+                        <h3 className="card__stats">Open {hours}
                         </h3>
-                        <h4 className="card__price">{phone}</h4>
-                        <Button onClick={addToFavorites} buttonSize="btn--wide" buttonColor="primary">Favorite This Clinic </Button>
+                        <h4 className="card__stats">{phone}</h4>
                     </div>
+                        <Button onClick={addToFavorites} buttonSize="btn--wide" buttonColor="primary">Favorite This Clinic </Button>
                 </div>
-            {/* </div > */}
-        </div>
+            </div >
+        </motion.div>
 
     )
 }

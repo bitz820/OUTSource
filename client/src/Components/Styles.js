@@ -193,4 +193,40 @@ margin-top: 100px;
 }
 `
 
-// 
+// Profile Page Styles
+export const ProfileContainer = styled.div`
+display: flex;
+flex-flow: column;
+
+`
+
+export const ProfileHeader = styled.div`
+display: flex;
+flex-flow: row;
+justify-content: space-between;
+min-width: fit-content;
+font-size: 2rem;
+h1{
+    text-align: left;
+}
+
+h5{
+    text-align: left;
+    /* color: white */
+}
+`
+
+export const CircleBanner = styled.div`
+border-radius: 50%;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+`
+
+export const ProfileBody = styled.div`
+border: red 1px solid;
+display: flex;
+flex-flow: row;
+justify-content: space-between;
+`
+// background: ${banner()}

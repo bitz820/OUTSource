@@ -60,15 +60,17 @@ body {
 }
 
 
-.card__price {
+.card__stats {
     /* font-size: 1.4rem; */
     margin-top: .6rem;
 }
 
-.card__price h4 {
+.card__stats h4 {
     margin-bottom: 10px;
 }
 
+
+/* Desktop */
 @media (min-width: 600px) {
 
     *,
@@ -121,10 +123,10 @@ body {
         /* margin-bottom: 0px; */
     }
 
-    .card__body Button {
-        margin-top: 100px;
-        /* padding-bottom: 0; */
-    }
+    /* .card__body Button {
+        position: absolute;
+        bottom: 0
+    } */
 
 
 }
