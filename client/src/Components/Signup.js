@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
-
+import { toast } from 'react-toastify'
+import { Button } from "../Components/pages/Button"
+import {GlobalStyle, StyledFormWrapper, StyledForm, StyledInput, StyledFieldSet} from "./Styles"
 import { createSignUp } from "../Features/usersSlice"
-
-// import {useNavigate} from "react-router-dom"
-// import toast from "react-hot-toast"
 
 function Signup() {
     const dispatch = useDispatch()
@@ -36,7 +35,7 @@ function Signup() {
 
     const signUserUp = (e) => {
         e.preventDefault()
-        dispatch(createSignUp(signUpData, navigate))
+        dispatch(createSignUp(signUpData, navigate, toast))
         setSignUpData({
             first_name: "",
             last_name: "",
@@ -50,104 +49,116 @@ function Signup() {
         })
     }
 
-    console.log(signUpData)
 
     return (
-        <div>
-            Signup
-            <form onSubmit={signUserUp}>
-                <input
-                    type="text"
-                    placeholder="First Name"
-                    name="first_name"
-                    value={first_name}
-                    onChange={handleChange}
-                />
-
-                <input
-                    type="text"
-                    placeholder="Last Name"
-                    name="last_name"
-                    value={last_name}
-                    onChange={handleChange}
-                />
-
-                <input
-                    type="email"
-                    placeholder="Email Address"
-                    name="email"
-                    value={email}
-                    onChange={handleChange}
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    name="password"
-                    value={password}
-                    onChange={handleChange}
-                />
-
-                <label>Age</label>
-                <input
-                    type="number"
-                    min="18"
-                    placeholder="Age"
-                    name="age"
-                    value={age}
-                    onChange={handleChange}
-                />
-
-                <label>Gender
-                    <select name="gender" onChange={handleChange}>
-                        <option value="">--Please choose an option--</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Transgender">Transgender</option>
-                        <option value="Nonbinary">Nonbinary</option>
-                        <option value="Other">Other</option>
-                    </select>
+    <>
+        <GlobalStyle />
+        <StyledFormWrapper >
+            <StyledForm onSubmit={signUserUp}>
+                <h1>Sign Up</h1>
+                <label>First Name
+                    <StyledInput
+                        type="text"
+                        placeholder="First Name"
+                        name="first_name"
+                        value={first_name}
+                        onChange={handleChange}
+                    />
                 </label>
-
-                <label>Sexuality
-                    <select name="sexuality" onChange={handleChange}>
-                        <option value="">--Please choose an option--</option>
-                        <option value="Gay">Gay</option>
-                        <option value="Lesbian">Lesbian</option>
-                        <option value="Bisexual">Bisexual</option>
-                        <option value="Asexual">Asexual</option>
-                        <option value="Other">Other</option>
-                    </select>
+                <label>
+                    Last Name
+                    <StyledInput
+                        type="text"
+                        placeholder="Last Name"
+                        name="last_name"
+                        value={last_name}
+                        onChange={handleChange}
+                    />
                 </label>
-
-                <label>Reason for Signing Up
-                    <select name="reason_for_signup" onChange={handleChange}>
-                        <option value="">--Please choose an option--</option>
-                        <option value="STI Testing">STI Testing</option>
-                        <option value="PrEP">PrEP</option>
-                        <option value="HIV Testing">HIV Testing</option>
-                        <option value="Counseling">Counseling</option>
-                        <option value="Other">Other</option>
-                    </select>
+                <label>
+                    Email
+                    <StyledInput
+                        type="email"
+                        placeholder="Email Address"
+                        name="email"
+                        value={email}
+                        onChange={handleChange}
+                    />
                 </label>
-
-                <label>How'd You Hear About Us?
-                    <select name="referred" onChange={handleChange}>
-                        <option value="">--Please choose an option--</option>
-                        <option value="Internet">Internet</option>
-                        <option value="Friend">Friend</option>
-                        <option value="Partner">Partner</option>
-                        <option value="Healthcare Provider">Healthcare Provider</option>
-                        <option value="Other">Other</option>
-                    </select>
+                <label>
+                    Password
+                    <StyledInput
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        value={password}
+                        onChange={handleChange}
+                    />
                 </label>
+                <label>
+                    Age
+                    <StyledInput
+                        type="number"
+                        min="18"
+                        placeholder="Age"
+                        name="age"
+                        value={age}
+                        onChange={handleChange}
+                    /></label>
+                <StyledFieldSet>
+                    <label>Gender
+                        <select name="gender" onChange={handleChange}>
+                            <option value="">--Please choose an option--</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Transgender">Transgender</option>
+                            <option value="Nonbinary">Nonbinary</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </label>
 
-                <input type="submit" />
-            </form>
+                    <label>Sexuality
+                        <select name="sexuality" onChange={handleChange}>
+                            <option value="">--Please choose an option--</option>
+                            <option value="Gay">Gay</option>
+                            <option value="Lesbian">Lesbian</option>
+                            <option value="Bisexual">Bisexual</option>
+                            <option value="Asexual">Asexual</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </label>
 
-            or go back to <Link to="/login"> Log In</Link>
+                    <label>Reason for Signing Up
+                        <select name="reason_for_signup" onChange={handleChange}>
+                            <option value="">--Please choose an option--</option>
+                            <option value="STI Testing">STI Testing</option>
+                            <option value="PrEP">PrEP</option>
+                            <option value="HIV Testing">HIV Testing</option>
+                            <option value="Counseling">Counseling</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </label>
 
-        </div>
+                    <label>How'd You Hear About Us?
+                        <select name="referred" onChange={handleChange}>
+                            <option value="">--Please choose an option--</option>
+                            <option value="Internet">Internet</option>
+                            <option value="Friend">Friend</option>
+                            <option value="Partner">Partner</option>
+                            <option value="Healthcare Provider">Healthcare Provider</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </label>
+
+                </StyledFieldSet>
+
+                <Button buttonStyle="btn--outline" type="submit">Submit</Button>
+            </StyledForm>
+        </StyledFormWrapper >
+        or go back to <Link to="/login"> Log In</Link>
+    </>
     )
 }
 
 export default Signup
+

@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom"
+import { toast } from 'react-toastify';
+import {GlobalStyle, StyledFormWrapper, StyledForm, StyledInput} from "../Components/Styles"
+import {Button} from "../Components/pages/Button"
 
 import { fetchLogin } from '../Features/usersSlice';
 
@@ -15,10 +18,10 @@ function Login() {
 
     const user = useSelector(state => state.user)
     const { email, password } = loginData
-    
+
     const loginUser = (e) => {
         e.preventDefault()
-        dispatch(fetchLogin(loginData, navigate));
+        dispatch(fetchLogin(loginData, navigate, toast));
         setLoginData({
             email: '',
             password: ''
@@ -37,11 +40,13 @@ function Login() {
 
     return (
         <>
-            <div>
-                <form onSubmit={loginUser}>
+            <GlobalStyle />
+            <h1>Login</h1>
+            <StyledFormWrapper >
+                <StyledForm onSubmit={loginUser}>
                     <label>
                         Email:
-                        <input
+                        <StyledInput
                             onChange={handleChange}
                             value={email}
                             name="email"
@@ -50,17 +55,16 @@ function Login() {
                     </label>
                     <label>
                         Password:
-                        <input
+                        <StyledInput
                             onChange={handleChange}
                             value={password}
                             name="password"
                             type="password"
                         />
                     </label>
-                    <input type="submit" />
-                    {/* {error ? renderError : null} */}
-                </form>
-            </div>
+                    <Button buttonStyle="btn--outline"  type="submit">Login</Button>
+                </StyledForm>
+            </StyledFormWrapper>
             <div>
                 or you can <Link to="/signup"> Sign Up</Link>
             </div>

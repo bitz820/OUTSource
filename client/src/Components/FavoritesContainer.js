@@ -18,7 +18,7 @@ const renderFavorites = favoritedClinics.map(fav => <FavoriteCard key={fav.id} d
 return (
 
     <div>
-      Favorites
+    <h1>Check out your favorites</h1>
     {renderFavorites}
 
     </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-
+import { toast } from 'react-toastify'
 import { updateAccountDetails} from "../Features/usersSlice"
 
 function EditProfile() {
@@ -34,7 +34,7 @@ function EditProfile() {
 
     const updateDetails = (e) => {
         e.preventDefault()
-        dispatch(updateAccountDetails(profile))
+        dispatch(updateAccountDetails(profile, toast))
         navigate("/profile")
     }
 

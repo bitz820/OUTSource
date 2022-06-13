@@ -2,31 +2,43 @@ import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "./Features/usersSlice";
+import { ToastContainer } from 'react-toastify';
 
 import NavBar from "./Components/NavBar"
-import ClinicContainer from "./Components/ClinicContainer";
-import FavoritesContainer from "./Components/FavoritesContainer"
-
-import Login from "./Components/Login";
-import ProfilePage from "./Components/ProfilePage";
 import Home from "./Components/Home";
 import Signup from "./Components/Signup";
 import EditProfile from "./Components/EditProfile"
+import Login from "./Components/Login";
+import ProfilePage from "./Components/ProfilePage";
 import Footer from "./Components/pages/Footer"
 import ProtectedRoutes from "./Components/ProtectedRoutes"
-import "./App.css"
+import ClinicContainer from "./Components/ClinicContainer";
+import FavoritesContainer from "./Components/FavoritesContainer"
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
-  // useEffect(() => {
-  //   dispatch(setUser())
-  // }, [])
+  useEffect(() => {
+    dispatch(setUser())
+  }, [])
 
 
   return (
     <div className="App">
       <NavBar />
+      <ToastContainer
+        theme="colored"
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/clinics" element={<ClinicContainer />} />
@@ -41,6 +53,7 @@ function App() {
       <Footer />
     </div>
   );
+
 }
 
 export default App;

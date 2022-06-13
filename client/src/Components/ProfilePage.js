@@ -1,7 +1,7 @@
 import React from 'react'
 import {useNavigate} from "react-router-dom"
 import {useSelector, useDispatch} from "react-redux"
-
+import { toast } from 'react-toastify'
 import {deleteAccount} from "../Features/usersSlice"
 
 function ProfilePage() {
@@ -10,7 +10,7 @@ const dispatch = useDispatch()
 const navigate = useNavigate()
 
 const deleteUser = () => {
-  dispatch(deleteAccount(user.id))
+  dispatch(deleteAccount(user.id, toast))
   navigate("/")
 }
 

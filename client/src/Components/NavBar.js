@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { GiRainbowStar } from "react-icons/gi"
 import { FaBars, FaTimes } from "react-icons/fa"
+import {toast } from "react-toastify"
 import "./pages/NavBar.css"
 import styled from "styled-components"
 import { Button } from "./pages/Button"
@@ -33,7 +34,7 @@ function NavBar() {
     window.addEventListener("resize", showButton)
 
     const handleLogout = () => {
-        dispatch(logoutUser(user))
+        dispatch(logoutUser(toast))
     }
 
 

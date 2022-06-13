@@ -15,7 +15,7 @@ const setUser = () => {
 }
 
 // Sign Up for Account
-const createSignUp = (user, navigate) => {
+const createSignUp = (user, navigate, toast) => {
     return function (dispatch) {
         fetch("/signup", {
             method: "POST",
@@ -28,19 +28,44 @@ const createSignUp = (user, navigate) => {
             .then(r => {
                 if (r.ok) {
                     r.json().then(user => {
-                        console.log(navigate)
+                        toast.info(`Welcome to the OUTSource Family, ${user.first_name}`, {
+                            theme: "colored",
+                            icon: "❤️🧡💛🖤💚💙💜",
+                            position: "top-center",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                        })
                         dispatch({ type: "signup", payload: user })
                         navigate("/")
                     })
                 } else {
-                    r.json().then(err => console.log(err))
+                    r.json().then(err => {
+                        console.log(err.errors.map(e => {
+                            toast.error(e, {
+                                theme: "colored",
+                                icon: "❤️🧡💛🖤💚💙💜",
+                                position: "top-center",
+                                autoClose: 5000,
+                                hideProgressBar: false,
+                                closeOnClick: true,
+                                pauseOnHover: true,
+                                draggable: true,
+                                progress: undefined,
+                            })
+                        }))
+                    })
+
                 }
             })
     }
 }
 
 // Fetch User Information
-const fetchLogin = (user, navigate) => {
+const fetchLogin = (user, navigate, toast) => {
     return function (dispatch) {
         fetch("/login", {
             method: "POST",
@@ -54,12 +79,31 @@ const fetchLogin = (user, navigate) => {
                 if (r.ok) {
                     r.json().then(user => {
                         dispatch({ type: "login", payload: user })
+                        toast.warn(`Welcome back ${user.first_name}, you were missed!`, {
+                            theme: "colored",
+                            icon: "❤️🧡💛🖤💚💙💜",
+                            position: "top-center",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                        })
                         navigate("/")
                     })
                 }
                 else {
                     r.json().then(err => {
-                        console.log(err)
+                        toast.error(err.error, {
+                            position: "top-center",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                        })
                         navigate("/login")
                     })
                 }
@@ -68,37 +112,72 @@ const fetchLogin = (user, navigate) => {
 }
 
 // Log User Out
-const logoutUser = () => {
+const logoutUser = (toast) => {
     return function (dispatch) {
         fetch("/logout", { method: "DELETE" })
             .then(r => {
                 console.log(r)
                 if (r.ok) {
+                    toast.warn("You have been logged out, come back soon!", {
+                        icon: "👋🏽",
+                        position: "top-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    })
                     dispatch({ type: "logout", payload: {} })
                 } else {
-                    r.json().then(err => console.log(err))
+                    r.json().then(err => toast.error(err, {
+                        position: "top-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    }))
                 }
             })
     }
 }
 
 // Permanently Delete Account
-const deleteAccount = (id) => {
+const deleteAccount = (id, toast) => {
     return function (dispatch) {
         fetch(`/users/${id}`, { method: "DELETE" })
             .then(r => {
                 console.log(r)
                 if (r.ok) {
+                    toast.info("Account deleted successfully, please come back any time", {
+                        position: "top-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    })
                     dispatch({ type: "delete", payload: {} })
                 } else {
-                    r.json().then(err => console.log(err))
+                    r.json().then(err => toast.error(err, {
+                        position: "top-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    }))
                 }
             })
     }
 }
 
 // Update User Account Details 
-const updateAccountDetails = (user) => {
+const updateAccountDetails = (user, toast) => {
     return function (dispatch) {
         fetch(`users/${user.id}`, {
             method: "PATCH",
@@ -107,7 +186,10 @@ const updateAccountDetails = (user) => {
         })
             .then(r => {
                 if (r.ok) {
-                    r.json().then(user => dispatch({ type: "update", payload: user }))
+                    r.json().then(user => {
+                        toast.success(`${user.first_name}'s Account has successfully been updated!`)
+                        dispatch({ type: "update", payload: user })
+                    })
                 }
                 else {
                     r.json().then(err => console.log(err))

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Footer.css';
 import { Button } from './Button';
+import { toast } from 'react-toastify';
 import { NavLink, useNavigate } from 'react-router-dom';
 import {
     FaBlogger,
@@ -16,7 +17,16 @@ function Footer() {
 
     const handleSubscribe = (e) => {
         e.preventDefault()
-        alert("You have successfully subscribed to our mailing list")
+        toast.success("Thanks for subscribing!", {
+            icon: "👍🏻",
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        })
         navigate("/")
     }
 
