@@ -1,13 +1,18 @@
 import styled, { createGlobalStyle, css } from "styled-components"
 // Color Palatte
-    /* PINK: #f5abb9; */
-    /* BLUE: #5bcffb; */
+/* PINK: #f5abb9; */
+/* BLUE: #5bcffb; */
+
+// Top Level Style 
+export const AppStyle = styled.div`
+text-align: center;
+box-sizing: border-box;
+`
 
 // Form Styling
 export const GlobalStyle = createGlobalStyle`
 html {
     height: 100%;
-
 }
 body {
     background: white;
@@ -72,12 +77,12 @@ label {
 }
 `
 
+// Styling the clinic Cards
 export const CardStyle = styled.div`
 *,
 *::before,
 *::after {
     box-sizing: border-box;
-    margin: 0;
     padding: 0;
     text-align: center;
 }
@@ -119,7 +124,7 @@ body {
     line-height: 1.2rem;
     display: flex;
     flex-flow: row;
-    justify-content: space-evenly;
+justify-content: space-evenly;
     margin: 10px;
 }
 
@@ -140,7 +145,13 @@ body {
     margin-bottom: 10px;
 }
 
-@media (min-width: 600px) {
+@media(min-width: 600px){
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+    }
+    
 
     .wrapper {
     grid-template-columns:repeat(auto-fit, minmax(14rem,16rem));
@@ -149,11 +160,37 @@ body {
 .card{
     flex-direction: column;
     text-align: center;
-    min-width: 14rem;
+    min-width: 15rem;
+    max-height: 15rem;
 }
 
+.card__title {
+    font-size: 1.4rem;
 }
 
+.card__description {
+    line-height: 1.2rem;
+    display: flex; 
+    flex-flow: row;
+justify-content: space-around;
+    margin: 10px;
+}
+
+.card__description img {
+    margin: 10px 10px;
+    max-width: 40px;
+    max-height: 40px;
+    padding: 3px;
+    align-items: space-evenly;
+}
+
+Button {
+margin-top: 100px;
+/* margin-bottom: 0px; */
+}
+
+
+}
 `
 
 // 

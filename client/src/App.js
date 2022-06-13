@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "./Features/usersSlice";
 import { ToastContainer } from 'react-toastify';
-
+import { AppStyle } from "./Components/Styles";
 import NavBar from "./Components/NavBar"
 import Home from "./Components/Home";
 import Signup from "./Components/Signup";
@@ -26,7 +26,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <AppStyle className="App">
       <NavBar />
       <ToastContainer
         theme="colored"
@@ -51,7 +51,7 @@ function App() {
         <Route exact path="/signup" element={<Signup />} />
       </Routes>
       <Footer />
-    </div>
+    </AppStyle>
   );
 
 }

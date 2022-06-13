@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { Button } from "./pages/Button"
 import { toast } from "react-toastify"
 import randomColor from "randomcolor";
-import { CardStyle } from './Styles'
+// import { CardStyle } from './Styles'
 
 
 
@@ -16,6 +16,7 @@ import stiPic from "../media/sti.png"
 import "./Card.css"
 
 import { addFavoriteClinic } from "../Features/favoritesSlice"
+// import { CardStyle } from './Styles'
 
 function Card({ info }) {
     const color = randomColor({
@@ -35,19 +36,19 @@ function Card({ info }) {
     const prep = "PrEP"
 
     const hivLogo = services.includes(hiv) ?
-        <div className='service'>
+        <div>
             <img src={hivPic} alt="hivTest" />
             <p>HIV Testing</p>
         </div> : null
 
     const psyLogo = services.includes(psy) ?
-        <div className='service'>
+        <div>
             <img src={psyPic} alt="counseling" />
             <p>Counseling</p>
         </div> : null
 
     const stiLogo = services.includes(sti) ?
-        <div className='service'>
+        <div>
             <img src={stiPic} alt="stiTest" />
             <p>STI Testing</p>
         </div> : null
@@ -69,20 +70,25 @@ function Card({ info }) {
 
     return (
         <div >
-            <div className="card" style={{ backgroundColor: color }}>
-                <div className="card__body">
-                    <h1 className="card__title">{name} </h1>
-                    <span>{location}, {city}, TX {zip}</span>
-                    <div className='card__description'>
-                        {hivLogo} {prepLogo} {stiLogo}  {psyLogo}
+            {/* <div className='wrapper'> */}
+                <div className="card" style={{ backgroundColor: color }}>
+                    <div className="card__body">
+                        <h1 className="card__title">{name} </h1>
+                        <span>{location}, 
+                         <br/>
+                         {city}, TX {zip}</span>
+                        <div className='card__description'>
+                            {hivLogo} {prepLogo} {stiLogo}  {psyLogo}
+                        </div>
+                        <h3 className="card__price">Open {hours}
+                        </h3>
+                        <h4 className="card__price">{phone}</h4>
+                        <Button onClick={addToFavorites} buttonSize="btn--wide" buttonColor="primary">Favorite This Clinic </Button>
                     </div>
-                    <h3 className="card__price">Open {hours}
-                    </h3>
-                    <h4 className="card__price">{phone}</h4>
-                    <Button onClick={addToFavorites} buttonSize="btn--wide" buttonColor="primary">Favorite This Clinic </Button>
                 </div>
-            </div>
+            {/* </div > */}
         </div>
+
     )
 }
 
