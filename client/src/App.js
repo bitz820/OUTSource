@@ -6,6 +6,7 @@ import { setUser } from "./Features/usersSlice";
 import NavBar from "./Components/NavBar"
 import ClinicContainer from "./Components/ClinicContainer";
 import FavoritesContainer from "./Components/FavoritesContainer"
+
 import Login from "./Components/Login";
 import ProfilePage from "./Components/ProfilePage";
 import Home from "./Components/Home";
@@ -21,6 +22,7 @@ function App() {
   // useEffect(() => {
   //   dispatch(setUser())
   // }, [])
+
 
   return (
     <div className="App">
