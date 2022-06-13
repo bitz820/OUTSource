@@ -99,7 +99,6 @@ function Signup() {
                     Age
                     <StyledInput
                         type="number"
-                        min="18"
                         placeholder="Age"
                         name="age"
                         value={age}

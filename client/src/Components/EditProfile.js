@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import { updateAccountDetails} from "../Features/usersSlice"
+import { updateAccountDetails } from "../Features/usersSlice"
+import { GlobalStyle, StyledFormWrapper, StyledForm, StyledInput, StyledFieldSet } from "./Styles"
+
 
 function EditProfile() {
     const dispatch = useDispatch()
@@ -34,76 +36,108 @@ function EditProfile() {
 
     const updateDetails = (e) => {
         e.preventDefault()
-        dispatch(updateAccountDetails(profile, toast))
-        navigate("/profile")
+        dispatch(updateAccountDetails(profile, toast, navigate))
     }
 
     console.log(profile)
 
     return (
-        <div>
-            EditProfile
-            <form onSubmit={updateDetails}>
-                <label>First Name
-                    <input type="text"
-                        name="first_name"
-                        placeholder={first_name}
-                        value={profile.first_name}
-                        onChange={handleChange} />
-                </label>
-                <label>Last Name
-                    <input type="text"
-                        name="last_name"
-                        placeholder={last_name}
-                        value={profile.last_name}
-                        onChange={handleChange} />
-                </label>
-                <label>Age
-                    <input type="text"
-                        name="age"
-                        placeholder={age}
-                        value={profile.age}
-                        onChange={handleChange} />
-                </label>
-                <label>Email
-                    <input type="email"
-                        name="email"
-                        placeholder={email}
-                        value={profile.email}
-                        onChange={handleChange} />
-                </label>
-                <label>Gender
-                    <input type="text"
-                        name="gender"
-                        placeholder={gender}
-                        value={profile.gender}
-                        onChange={handleChange} />
-                </label>
-                <label>Sexuality
-                    <input type="text"
-                        name="sexuality"
-                        placeholder={sexuality}
-                        value={profile.sexuality}
-                        onChange={handleChange} />
-                </label>
-                <label>Reason for Account
-                    <input type="text"
-                        name="reason_for_signup"
-                        placeholder={reason_for_signup}
-                        value={profile.reason_for_signup}
-                        onChange={handleChange} />
-                </label>
-                <label>How'd you hear about us?
-                    <input type="text"
-                        name="referred"
-                        placeholder={referred}
-                        value={profile.referred}
-                        onChange={handleChange} />
-                </label>
-                <input type="submit" />
-            </form>
+        <>
+            <GlobalStyle />
+            <StyledFormWrapper>
+                <StyledForm onSubmit={updateDetails}>
+                    <h1>Edit Profile</h1>
+                    <label>First Name
+                        <StyledInput type="text"
+                            name="first_name"
+                            placeholder={first_name}
+                            value={profile.first_name}
+                            onChange={handleChange} />
+                    </label>
+                    <label>Last Name
+                        <StyledInput type="text"
+                            name="last_name"
+                            placeholder={last_name}
+                            value={profile.last_name}
+                            onChange={handleChange} />
+                    </label>
+                    <label>Age
+                        <StyledInput
+                            type="number"
+                            name="age"
+                            placeholder={age}
+                            value={profile.age}
+                            onChange={handleChange} />
+                    </label>
+                    <label>Email
+                        <StyledInput type="email"
+                            name="email"
+                            placeholder={email}
+                            value={profile.email}
+                            onChange={handleChange} />
+                    </label>
+                    <StyledFieldSet>
+                        <label>Gender
+                            <select type="text"
+                                name="gender"
+                                placeholder={gender}
+                                value={profile.gender}
+                                onChange={handleChange}>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Transgender">Transgender</option>
+                                <option value="Nonbinary">Nonbinary</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </label>
 
-        </div>
+                        <label>Sexuality
+                            <select name="sexuality"
+                                placeholder={sexuality}
+                                value={profile.sexuality}
+                                onChange={handleChange}>
+
+                                <option value="Gay">Gay</option>
+                                <option value="Lesbian">Lesbian</option>
+                                <option value="Bisexual">Bisexual</option>
+                                <option value="Asexual">Asexual</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </label>
+
+                        <label>Reason for Signing Up
+                            <select name="reason_for_signup"
+                                placeholder={reason_for_signup}
+                                value={profile.reason_for_signup}
+                                onChange={handleChange}>
+                                <option value="STI Testing">STI Testing</option>
+                                <option value="PrEP">PrEP</option>
+                                <option value="HIV Testing">HIV Testing</option>
+                                <option value="Counseling">Counseling</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </label>
+
+                        <label>How'd You Hear About Us?
+                            <select name="referred"
+                                placeholder={referred}
+                                value={profile.referred}
+                                onChange={handleChange}>
+                                <option value="Internet">Internet</option>
+                                <option value="Friend">Friend</option>
+                                <option value="Partner">Partner</option>
+                                <option value="Healthcare Provider">Healthcare Provider</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </label>
+
+                    </StyledFieldSet>
+
+
+                    <input type="submit" />
+                </StyledForm>
+            </StyledFormWrapper>
+        </>
     )
 }
 

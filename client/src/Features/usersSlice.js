@@ -177,7 +177,7 @@ const deleteAccount = (id, toast) => {
 }
 
 // Update User Account Details 
-const updateAccountDetails = (user, toast) => {
+const updateAccountDetails = (user, toast, navigate) => {
     return function (dispatch) {
         fetch(`users/${user.id}`, {
             method: "PATCH",
@@ -189,10 +189,14 @@ const updateAccountDetails = (user, toast) => {
                     r.json().then(user => {
                         toast.success(`${user.first_name}'s Account has successfully been updated!`)
                         dispatch({ type: "update", payload: user })
+                        navigate("/profile")
                     })
                 }
                 else {
-                    r.json().then(err => console.log(err))
+                    r.json().then(err => {
+                        err.errors.map(e => toast.error(e))
+                        navigate("/editProfile")
+                    })
                 }
             })
 
