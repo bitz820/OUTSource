@@ -43,7 +43,7 @@ function App() {
         draggable
         pauseOnHover />
       <Routes>
-        <Route exact path="/hero" element={<HeroSection/>} />
+        {/* <Route exact path="/hero" element={<HeroSection/>} /> */}
         <Route exact path="/" element={<Home />} />
         <Route exact path="/clinics" element={<ClinicContainer />} />
         <Route element={<ProtectedRoutes />}>

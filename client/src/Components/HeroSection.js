@@ -1,5 +1,5 @@
 import React from 'react';
-import './HeroSection.css';
+// import './HeroSection.css';
 import outsource from "../media/outsource.jpeg"
 import outsource2 from "../media/outsource2.jpeg"
 import outsource3 from "../media/outsource3.jpeg"
@@ -12,7 +12,7 @@ function HeroSection() {
   return (
     <>
       <div
-        className={'home__hero-section darkBg'}
+        className='home__hero-section darkBg'
       >
         <div className='container'>
           <div

@@ -5,7 +5,7 @@ import { Button } from "./pages/Button"
 import { toast } from "react-toastify"
 import randomColor from "randomcolor";
 import { motion } from 'framer-motion'
-// import { CardStyle } from './Styles'
+
 
 
 
@@ -14,10 +14,8 @@ import prepPic from "../media/prep.png"
 import psyPic from "../media/psy.png"
 import stiPic from "../media/sti.png"
 
-import "./Card.css"
 
 import { addFavoriteClinic } from "../Features/favoritesSlice"
-// import { CardStyle } from './Styles'
 
 function Card({ info }) {
     const color = randomColor({
@@ -71,23 +69,23 @@ function Card({ info }) {
 
     return (
         <motion.div layout >
-            <div className='wrapper'>
-                <div className="card" style={{ backgroundColor: color }}>
-                    <div className="card__body">
-                        <h1 className="card__title">{name} </h1>
-                        <span>{location}, 
-                         <br/>
-                         {city}, TX {zip}</span>
-                        <div className='card__description'>
-                            {hivLogo} {prepLogo} {stiLogo}  {psyLogo}
-                        </div>
-                        <h3 className="card__stats">Open {hours}
-                        </h3>
-                        <h4 className="card__stats">{phone}</h4>
-                    </div>
-                        <Button onClick={addToFavorites} buttonSize="btn--wide" buttonColor="primary">Favorite This Clinic </Button>
+            <div className="card" style={{ backgroundColor: color }}>
+                <h1 className="card__title">{name} </h1>
+                <span className="card__location">{location},
+                    <br />
+                    {city}, TX {zip}</span>
+                <div className='card__description'>
+                    {hivLogo} {prepLogo} {stiLogo}  {psyLogo}
                 </div>
-            </div >
+                <div className='card__stats'>
+                    <h3>Open {hours}</h3>
+                    <h4>{phone}</h4>
+                </div>
+                <div>
+                    <Button onClick={addToFavorites}
+                        className="favorite__btn" buttonSize="btn--wide" buttonColor="primary">Favorite This Clinic </Button>
+                </div>
+            </div>
         </motion.div>
 
     )
