@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle, css } from "styled-components"
+
 // Color Palatte
 /* PINK: #f5abb9; */
 /* BLUE: #5bcffb; */
@@ -310,4 +311,46 @@ export const WarningButton = styled.button`
 
     }
 `
+
+// Home Styling
+
+
+export const ComponentContainer1 = styled.div`
+display: flex;
+flex-direction: row;
+border: 1px red solid;
+
+
+    h2 {
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        line-height: 40px;
+    }
+
+    img {
+        max-width: 400px;
+        max-height: 400px;
+    }
+`
+
+export const ComponentContainer2 = styled.div`
+display: flex;
+flex-direction: row;
+background: var(--primary);
+
+
+    h2 {
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        line-height: 40px;
+    }
+
+    img {
+        max-width: 400px;
+        max-height: 400px;
+    }
+`
+
 // background: ${banner()}

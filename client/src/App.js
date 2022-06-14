@@ -16,6 +16,8 @@ import ClinicContainer from "./Components/ClinicContainer";
 import FavoritesContainer from "./Components/FavoritesContainer"
 import 'react-toastify/dist/ReactToastify.css';
 
+import HeroSection from "./Components/HeroSection";
+
 
 function App() {
   const dispatch = useDispatch()
@@ -40,6 +42,7 @@ function App() {
         draggable
         pauseOnHover />
       <Routes>
+        <Route exact path="/hero" element={<HeroSection/>} />
         <Route exact path="/" element={<Home />} />
         <Route exact path="/clinics" element={<ClinicContainer />} />
         <Route element={<ProtectedRoutes />}>
