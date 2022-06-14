@@ -15,6 +15,7 @@ import ProtectedRoutes from "./Components/ProtectedRoutes"
 import ClinicContainer from "./Components/ClinicContainer";
 import FavoritesContainer from "./Components/FavoritesContainer"
 import 'react-toastify/dist/ReactToastify.css';
+import "./App.css"
 
 import HeroSection from "./Components/HeroSection";
 
