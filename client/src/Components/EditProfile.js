@@ -20,9 +20,11 @@ function EditProfile() {
         email: userDetails.email,
         reason_for_signup: userDetails.reason_for_signup,
         referred: userDetails.referred,
+        contact_name: userDetails.contact_name,
+        contact_number: userDetails.contact_number,
     })
 
-    const { first_name, last_name, gender, age, email, reason_for_signup, referred, sexuality } = userDetails
+    const { first_name, last_name, gender, age, email, reason_for_signup, referred, sexuality, contact_name, contact_number } = userDetails
 
     const handleChange = (e) => {
         const name = e.target.name
@@ -76,6 +78,21 @@ function EditProfile() {
                             value={profile.email}
                             onChange={handleChange} />
                     </label>
+                    <label>Emergency Contact 
+                        <StyledInput type="text"
+                            name="contact_name"
+                            placeholder={contact_name}
+                            value={profile.contact_name}
+                            onChange={handleChange} />
+                    </label>
+                    <label>Emergency Contact Number
+                        <StyledInput type="text"
+                            name="contact_number"
+                            placeholder={contact_number}
+                            value={profile.contact_number}
+                            onChange={handleChange} />
+                    </label>
+
                     <StyledFieldSet>
                         <label>Gender
                             <select type="text"

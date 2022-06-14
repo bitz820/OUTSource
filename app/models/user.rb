@@ -1,12 +1,13 @@
 class User < ApplicationRecord
-    has_many :favorites
+    has_many :favorites, dependent: :destroy
     has_many :clinics, through: :favorites
 
     has_secure_password
 
     validates :email, format: /\w+@\w+\.{1}[a-zA-Z]{2,}/, presence: true, uniqueness: true
-    validates :first_name, :last_name, presence: true
+    validates :first_name, :last_name, :contact_name, :contact_number, presence: true
     validates :age, numericality: {greater_than_or_equal_to: 18, less_than_or_equal_to: 80}
+
     
     validate :permitted_emails
 

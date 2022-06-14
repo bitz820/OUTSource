@@ -203,9 +203,11 @@ flex-flow: column;
 export const ProfileHeader = styled.div`
 display: flex;
 flex-flow: row;
-justify-content: space-between;
+justify-content: space-evenly;
 min-width: fit-content;
 font-size: 2rem;
+background-color: black;
+color: white;
 h1{
     text-align: left;
 }
@@ -217,16 +219,95 @@ h5{
 `
 
 export const CircleBanner = styled.div`
+
 border-radius: 50%;
 display: flex;
-justify-content: flex-start;
+justify-content: center;
 align-items: center;
+color: black;
+min-width: 150px;
+min-height: 150px;
+
+@media only screen and (max-width: 600px) {
+    max-width: 60px;
+    max-height: 60px;
+}
+
+
+/* font-size: 1.4rem; */
 `
 
 export const ProfileBody = styled.div`
-border: red 1px solid;
 display: flex;
 flex-flow: row;
+justify-content: space-around;
+margin-top: 20px;
+`
+
+export const ProfileLeft = styled.div`
+border: 1px solid;
+padding: 10px;
+
+@media only screen and (max-width: 600px) {
+    border: none;
+}
+`
+
+export const ProfileButtonContainer = styled.div`
+/* border: red 1px solid; */
+display: flex;
+flex-flow: column;
 justify-content: space-between;
+`
+
+export const ProfileStats = styled.div`
+display: flex;
+/* align-items: flex-end; */
+/* justify-content: flex-end; */
+flex-flow: row;
+/* border: red 1px solid; */
+margin-bottom: 10px;
+
+    p {
+        margin-left: 12px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        margin: 0px;
+    }
+
+`
+
+export const ProfileTitle = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+`
+
+export const WarningButton = styled.button`
+    padding: 8px 20px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    background-color: black;
+    color: yellow;
+    border: none;
+
+    :hover {
+        transition: all .3s ease-out;
+        background-color: #f00946;
+        color: white;
+        border: none;
+    }
+
+    @media only screen and (max-width: 600px) {
+        transition: all .3s ease-out;
+        background-color: #f00946;
+        color: white;
+        border: none;
+
+    }
 `
 // background: ${banner()}

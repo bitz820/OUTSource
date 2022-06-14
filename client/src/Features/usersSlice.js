@@ -162,7 +162,9 @@ const deleteAccount = (id, toast) => {
                     })
                     dispatch({ type: "delete", payload: {} })
                 } else {
-                    r.json().then(err => toast.error(err, {
+                    r.json().then(err => {
+                        console.log(err)
+                        toast.error(err, {
                         position: "top-center",
                         autoClose: 5000,
                         hideProgressBar: false,
@@ -170,7 +172,7 @@ const deleteAccount = (id, toast) => {
                         pauseOnHover: true,
                         draggable: true,
                         progress: undefined,
-                    }))
+                    })})
                 }
             })
     }

@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useSyncExternalStore } from 'react'
 import { useNavigate } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { toast } from 'react-toastify'
+import { BsFilePersonFill } from "react-icons/bs"
+import { AiFillPhone, AiOutlineContacts, AiFillInfoCircle, AiFillQuestionCircle } from "react-icons/ai"
 import { deleteAccount } from "../Features/usersSlice"
-import { CircleBanner, ProfileBody, ProfileContainer, ProfileHeader } from "./Styles"
+import { CircleBanner, ProfileBody, ProfileButtonContainer, ProfileContainer, ProfileHeader, WarningButton, ProfileStats, ProfileLeft, ProfileTitle } from "./Styles"
+import { Button } from './pages/Button'
 
 function ProfilePage() {
   const user = useSelector(state => state.user)
@@ -44,54 +47,57 @@ function ProfilePage() {
 
   return (
     <>
+      <ProfileTitle>
+        <h1>Profile Details</h1>
+        <WarningButton
+          className="btn--red"
+          onClick={deleteUser}>Delete Account</WarningButton>
+      </ProfileTitle>
 
-      <h1>Profile Details</h1>
       <ProfileContainer>
-        <ProfileHeader className='profile__header'>
+        <ProfileHeader>
           <div>
             <h1>{user.first_name} {user.last_name}</h1>
             <h5>{user.email}</h5>
           </div>
           <CircleBanner style={{ background: bannerBg(sexuality) }}>
-            {sexuality}
+            {sexuality !== "Other"? sexuality : null}
             <br />PRIDE
           </CircleBanner>
         </ProfileHeader>
-        <ProfileBody className='profile__body'>
-          <div className='profile__body__left'>
-            <div className='profile__stats'>
-              <>
-                {/* USER ICON */}
-              </>
-              <p>Age: {user.age}</p>
-              <p>Gender: {user.gender}</p>
-              <p>Sexuality: {user.sexuality}</p>
-            </div>
-            <div className='profile__contact'>
-              <>
-                {/* PHONE BOOK ICON */}
-              </>
-              <p>Emergency Contact Name</p>
-              <>
-                {/* PHONE ICON */}
-              </>
-              <p>Emergency Contact Number</p>
-            </div>
-            <div className='profile__trackings'>
-              <>
-                {/* INFO ICON */}
-              </>
-              <p>Reason for Account: {user.reason_for_signup}</p>
-              <p>How'd you hear about us? {user.referred}</p>
-            </div>
+        <ProfileBody>
+        <ProfileLeft>
+            <h4>About</h4>
+            <ProfileStats className='profile__stats'>
+              <BsFilePersonFill />
+              <p>{user.age} y.o. {user.sexuality !== "Other" ? sexuality : null} {user.gender === "Male" || user.gender === "Female" ? user.gender : "Person"}</p>
+            </ProfileStats>
+            <h4>Emergency Contact</h4>
+            <ProfileStats className='profile__contact'>
+              <AiOutlineContacts />
+              <p>{user.contact_name}</p>
+            </ProfileStats>
+            <ProfileStats>
+              <AiFillPhone />
+              <p>{user.contact_number}</p>
+            </ProfileStats>
+            <h4>User Needs</h4>
+            <ProfileStats className='profile__trackings'>
 
-          </div>
-            <div className='profile__body__right'>
-              {/* import premade button */}
-              <button onClick={goToEditProfile}>Edit Profile</button>
-              <button onClick={deleteUser}>Delete Your Account</button>
-            </div>
+              <AiFillInfoCircle />
+              <p>Searching for: {user.reason_for_signup}</p>
+            </ProfileStats>
+            <ProfileStats>
+              <AiFillQuestionCircle />
+              <p>Referred by: {user.referred}</p>
+            </ProfileStats>
+</ProfileLeft>
+
+          {/* <ProfileButtonContainer>
+            import premade button
+          </ProfileButtonContainer> */}
         </ProfileBody>
+          <Button onClick={goToEditProfile}>Edit Profile</Button>
       </ProfileContainer >
     </>
   )
