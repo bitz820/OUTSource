@@ -19,10 +19,12 @@ function Signup() {
         gender: "",
         sexuality: "",
         reason_for_signup: "",
-        referred: ""
+        referred: "",
+        phone: "",
+        contact_name: "",
     })
 
-    const { first_name, last_name, email, password, age } = signUpData
+    const { first_name, last_name, email, password, age, contact_name, phone } = signUpData
 
     const handleChange = (e) => {
         const key = e.target.name
@@ -45,7 +47,9 @@ function Signup() {
             gender: "",
             sexuality: "",
             reason_for_signup: "",
-            referred: ""
+            referred: "",
+            phone: "",
+            contact_name: ""
         })
     }
 
@@ -103,7 +107,23 @@ function Signup() {
                         name="age"
                         value={age}
                         onChange={handleChange}
-                    /></label>
+                    />
+                    </label>
+                    <label>Emergency Contact 
+                        <StyledInput type="text"
+                            name="contact_name"
+                            placeholder="Contact Name"
+                            value={contact_name}
+                            onChange={handleChange} />
+                    </label>
+                    <label>Emergency Contact Number
+                        <StyledInput type="text"
+                            name="phone"
+                            placeholder="Phone Number"
+                            value={phone}
+                            onChange={handleChange} />
+                    </label>
+
                 <StyledFieldSet>
                     <label>Gender
                         <select name="gender" onChange={handleChange}>

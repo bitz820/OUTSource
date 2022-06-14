@@ -79,7 +79,7 @@ function ProfilePage() {
             </ProfileStats>
             <ProfileStats>
               <AiFillPhone />
-              <p>{user.contact_number}</p>
+              <p>{user.phone}</p>
             </ProfileStats>
             <h4>User Needs</h4>
             <ProfileStats className='profile__trackings'>
