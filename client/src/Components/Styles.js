@@ -8,6 +8,8 @@ import styled, { createGlobalStyle, css } from "styled-components"
 export const AppStyle = styled.div`
 text-align: center;
 box-sizing: border-box;
+font-family: 'Fredoka One', cursive;
+/* font-family: 'Poppins', sans-serif; */
 `
 
 // Form Styling
@@ -17,7 +19,7 @@ html {
 }
 body {
     background: white;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     height: 100%;
     margin: 0;
     color: #555;
@@ -89,7 +91,7 @@ export const CardStyle = styled.div`
 }
 
 body {
-    font-family: "Noto Sans", sans-serif;
+    /* font-family: "Noto Sans", sans-serif; */
     flex-grow: 1;
 }
 

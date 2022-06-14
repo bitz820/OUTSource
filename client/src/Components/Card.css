@@ -13,7 +13,7 @@ $clr-gray700: #161d34; */
 }
 
 body {
-    font-family: "Noto Sans", sans-serif;
+    /* font-family: "Noto Sans", sans-serif; */
     flex-grow: 1;
 }
 

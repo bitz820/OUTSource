@@ -13,38 +13,7 @@ function Home() {
         <em>Queer Care. Simple.</em>
       </div>
       <HeroSection />
-      {/* <ComponentContainer1 className="component-container">
-        <h2>
-          We at OUTSource are passionate about finding and delivering the best, state-of-the-art sexual health services – regardless of race, creed, gender, gender identity, or sexual orientation – without judgment or stigma. 
 
-        </h2>
-        <div className='image container'>
-          <img src={outsource} alt="OUTSource home" />
-          <img src={outsource2} alt="OUTSource home" />
-        </div>
-      </ComponentContainer1>
-      <ComponentContainer2 className="component-container">
-        <div className='image container'>
-          <img src={outsource3} alt="OUTSource event" />
-        </div>
-        <h2>
-          We at OUTSource are passionate about finding and delivering the best, state-of-the-art sexual health services – regardless of race, creed, gender, gender identity, or sexual orientation – without judgment or stigma. 
-
-        </h2>
-      </ComponentContainer2>
-      <ComponentContainer1 className="component-container">
-        <div className='image container'>
-          <img src={outsource3} alt="OUTSource home" />
-          <img src={outsource2} alt="OUTSource home" />
-        </div>
-        <h2>
-          We at OUTSource are passionate about finding and delivering the best sexual and mental health services for every gender, gender identity, or sexual orientation without judgment or stigma. 
-
-        </h2>
-      </ComponentContainer1>
-      <ComponentContainer1>
-
-      </ComponentContainer1> */}
 
     </>
   )
