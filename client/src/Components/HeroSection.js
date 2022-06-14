@@ -89,9 +89,9 @@ function HeroSection() {
                 <h1 className='heading'>
                   Community Events
                 </h1>
-                <div className='top-line'>There's always a ton to do to meet people out! Get off the couch and <a href='https://members.austinlgbtchamber.com/events'><Button>Check it out!</Button></a></div>
+                <div className='top-line'>There's always a ton to do to meet people out! Get off the couch and <a target="_blank"
+                            rel='noreferrer' href='https://members.austinlgbtchamber.com/events'><Button>Check it out!</Button></a></div>
                 <p>
-                  Description of some sort
                 </p>
               </div>
             </div>
