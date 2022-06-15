@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { updateAccountDetails } from "../Features/usersSlice"
-import {  StyledInput, StyledFieldSet } from "./Styles"
 
 
 function EditProfile() {
