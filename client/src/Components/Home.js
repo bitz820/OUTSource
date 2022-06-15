@@ -54,11 +54,7 @@ const Home = () => {
         </div>
       </div>
       <div className='services'>
-        <div className="services__title">
-          <h1 >Some Services We Offer...</h1>
-        </div>
-
-
+        <h1 id='services__title'>Some Services We Offer...</h1>
         <div className="services__container">
           <div className="service__item" id='prep'>
             <img src={prep} alt="prep" />

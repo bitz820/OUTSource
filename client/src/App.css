@@ -126,7 +126,7 @@ flex-flow: column;
     /* grid-template-columns: repeat(1fr, 3fr); */
 }
 
-.services_title {
+#services__title {
     display: flex;
     flex-flow: column;
 }
@@ -207,6 +207,16 @@ flex-flow: column;
     .img__container img {
         max-width: 200px;
         max-height: 150px;
+    }
+
+    #services__title {
+        border: 5px red solid;
+        font-size: 1.5rem;
+        padding: 0px;
+        margin: 0px;
+        max-width: fit-content;
+        align-self: center;
+    
     }
     
 
