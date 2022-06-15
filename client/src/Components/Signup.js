@@ -57,7 +57,7 @@ function Signup() {
     return (
     <>
         <div className="form__wrapper">
-            <StyledForm onSubmit={signUserUp}>
+            <form className='form' onSubmit={signUserUp}>
                 <h1>Sign Up</h1>
                 <label>First Name
                     <StyledInput
@@ -171,7 +171,7 @@ function Signup() {
                 </StyledFieldSet>
 
                 <Button buttonStyle="btn--outline" type="submit">Submit</Button>
-            </StyledForm>
+            </form>
         </div >
         or go back to <Link to="/login"> Log In</Link>
     </>

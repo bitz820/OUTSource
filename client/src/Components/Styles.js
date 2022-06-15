@@ -25,19 +25,6 @@ export const SharedStyles = css`
     box-sizing: border-box;
 `
 
-export const StyledForm = styled.form`
-    width: 100%;
-    max-width: 600px;
-    padding: 40px;
-    background: -webkit-linear-gradient(left, #ffadad, #ffd6a5, #fdffb6, #caffbf, #9bf6ff, #a0c4ff, #bdb2ff, #ffc6ff, #fffffc); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(left, #ffadad, #ffd6a5, #fdffb6, #caffbf, #9bf6ff, #a0c4ff, #bdb2ff, #ffc6ff, #fffffc);
-    background: -moz-linear-gradient(left, #ffadad, #ffd6a5, #fdffb6, #caffbf, #9bf6ff, #a0c4ff, #bdb2ff, #ffc6ff, #fffffc);
-    background: linear-gradient(left, #ffadad, #ffd6a5, #fdffb6, #caffbf, #9bf6ff, #a0c4ff, #bdb2ff, #ffc6ff, #fffffc);
-
-    border-radius: 10px;
-    box-sizing: border-box;
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.4);
-`
 
 export const StyledInput = styled.input`
     display: block;

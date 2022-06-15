@@ -42,7 +42,7 @@ function Login() {
         <>
             <h1>Login</h1>
             <div className="form__wrapper">
-                <StyledForm onSubmit={loginUser}>
+                <form className='form' onSubmit={loginUser}>
                     <label>
                         Email:
                         <StyledInput
@@ -62,7 +62,7 @@ function Login() {
                         />
                     </label>
                     <Button buttonStyle="btn--outline"  type="submit">Login</Button>
-                </StyledForm>
+                </form >
             </div>
             <div>
                 or you can <Link to="/signup"> Sign Up</Link>
