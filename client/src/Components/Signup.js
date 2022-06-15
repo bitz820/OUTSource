@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
 import { toast } from 'react-toastify'
 import { Button } from "../Components/pages/Button"
-import {  StyledForm, StyledInput, StyledFieldSet} from "./Styles"
 import { createSignUp } from "../Features/usersSlice"
 
 function Signup() {

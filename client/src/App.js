@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "./Features/usersSlice";
 import { ToastContainer } from 'react-toastify';
-import { AppStyle } from "./Components/Styles";
 import NavBar from "./Components/NavBar"
 import Home from "./Components/Home";
 import Signup from "./Components/Signup";
@@ -27,10 +26,9 @@ function App() {
 
 
   return (
-    <App className="App">
+    <div >
       <NavBar />
-      <ToastContainer
-        theme="colored"
+      <ToastContainer theme="colored"
         position="top-center"
         autoClose={5000}
         hideProgressBar={false}
@@ -41,7 +39,6 @@ function App() {
         draggable
         pauseOnHover />
       <Routes>
-        {/* <Route exact path="/hero" element={<HeroSection/>} /> */}
         <Route exact path="/" element={<Home />} />
         <Route exact path="/clinics" element={<ClinicContainer />} />
         <Route element={<ProtectedRoutes />}>
@@ -53,7 +50,7 @@ function App() {
         <Route exact path="/signup" element={<Signup />} />
       </Routes>
       <Footer />
-    </App>
+    </div>
   );
 
 }

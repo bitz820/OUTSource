@@ -13,15 +13,15 @@ function FavoritesContainer() {
     dispatch(fetchFavorites())
   }, [dispatch])
 
-const renderFavorites = favoritedClinics.map(fav => <FavoriteCard key={fav.id} data={fav.clinic}/>)
+  const renderFavorites = favoritedClinics.map(fav => <FavoriteCard key={fav.id} data={fav.clinic} />)
 
-return (
-
-    <div>
-    <h1>Check out your favorites</h1>
-    {renderFavorites}
-
-    </div>
+  return (
+    <>
+      <h1>Check out your favorites</h1>
+      <div className='.favorite__wrapper'>
+        {renderFavorites}
+      </div>
+    </>
   )
 }
 
