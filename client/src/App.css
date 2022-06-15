@@ -15,6 +15,13 @@ body {
     margin: 0;
 }
 
+.App {
+text-align: center;
+box-sizing: border-box;
+font-family: 'Fredoka One', cursive;
+
+}
+
 #root {
     height: 100vh;
 }
@@ -53,7 +60,6 @@ body {
 
 .home__hero-first {
     display: flex;
-    /* border: red 5px solid; */
     background: #f5abb9;
 }
 
@@ -659,6 +665,15 @@ body {
 
 }
 
+.styled__fieldset {
+    border: 1px solid #ddd;
+border-radius: 15px;  
+    padding: 10px;
+margin: 20px 0;
+
+
+}
+
 .styled__input {
     display: block;
     width: 100%;
@@ -671,6 +686,7 @@ body {
     padding: 20px;
     box-sizing: border-box;
 }
+
 
 @media only screen and (max-width: 600px) {
     .form {

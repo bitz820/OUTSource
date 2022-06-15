@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom"
 import { toast } from 'react-toastify';
-import {  StyledForm, StyledInput} from "../Components/Styles"
 import {Button} from "../Components/pages/Button"
 
 import { fetchLogin } from '../Features/usersSlice';
@@ -16,7 +15,6 @@ function Login() {
         password: ''
     })
 
-    const user = useSelector(state => state.user)
     const { email, password } = loginData
 
     const loginUser = (e) => {
@@ -26,7 +24,6 @@ function Login() {
             email: '',
             password: ''
         })
-        // console.log(user)
     }
 
     const handleChange = (e) => {
@@ -45,7 +42,7 @@ function Login() {
                 <form className='form' onSubmit={loginUser}>
                     <label>
                         Email:
-                        <StyledInput
+                        <input className='styled__input'
                             onChange={handleChange}
                             value={email}
                             name="email"
@@ -54,7 +51,7 @@ function Login() {
                     </label>
                     <label>
                         Password:
-                        <StyledInput
+                        <input className='styled__input'
                             onChange={handleChange}
                             value={password}
                             name="password"

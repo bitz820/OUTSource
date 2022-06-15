@@ -6,9 +6,9 @@ import styled, { createGlobalStyle, css } from "styled-components"
 
 // Top Level Style 
 export const AppStyle = styled.div`
-text-align: center;
+/* text-align: center;
 box-sizing: border-box;
-font-family: 'Fredoka One', cursive;
+font-family: 'Fredoka One', cursive; */
 /* font-family: 'Poppins', sans-serif; */
 `
 
@@ -26,36 +26,4 @@ export const SharedStyles = css`
 `
 
 
-export const StyledInput = styled.input`
-    display: block;
-    width: 100%;
-    text-align: left;
-    ${SharedStyles}
-`
 
-export const StyledFieldSet = styled.fieldset`
-border: 1px solid #ddd;
-display: flex;
-flex-flow: column;
-justify-content: flex-start;
-border-radius: 5px;
-padding: 10px;
-margin: 20px 0;
-
-label {
-    padding: 20px;
-    text-align: left;
-    align-content: center;
-}
-`
-
-
-// Profile Page Styles
-
-
-export const ProfileButtonContainer = styled.div`
-/* border: red 1px solid; */
-display: flex;
-flex-flow: column;
-justify-content: space-between;
-`

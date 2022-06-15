@@ -27,7 +27,7 @@ function App() {
 
 
   return (
-    <AppStyle className="App">
+    <App className="App">
       <NavBar />
       <ToastContainer
         theme="colored"
@@ -53,7 +53,7 @@ function App() {
         <Route exact path="/signup" element={<Signup />} />
       </Routes>
       <Footer />
-    </AppStyle>
+    </App>
   );
 
 }

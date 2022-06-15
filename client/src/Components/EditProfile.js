@@ -92,7 +92,7 @@ function EditProfile() {
                             onChange={handleChange} />
                     </label>
 
-                    <StyledFieldSet>
+                    <fieldset className="styled__fieldset">
                         <label>Gender
                             <select className='styled__input' type="text"
                                 name="gender"
@@ -147,7 +147,7 @@ function EditProfile() {
                             </select>
                         </label>
 
-                    </StyledFieldSet>
+                    </fieldset>
 
                     <input type="submit" />
                 </form>
