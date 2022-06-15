@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { updateAccountDetails } from "../Features/usersSlice"
-import { GlobalStyle, StyledFormWrapper, StyledForm, StyledInput, StyledFieldSet } from "./Styles"
+import {  StyledInput, StyledFieldSet } from "./Styles"
 
 
 function EditProfile() {
@@ -45,9 +45,8 @@ function EditProfile() {
 
     return (
         <>
-            <GlobalStyle />
-            <StyledFormWrapper>
-                <StyledForm onSubmit={updateDetails}>
+            <div className="form__wrapper">
+                <form className="form" onSubmit={updateDetails}>
                     <h1>Edit Profile</h1>
                     <label>First Name
                         <StyledInput type="text"
@@ -78,7 +77,7 @@ function EditProfile() {
                             value={profile.email}
                             onChange={handleChange} />
                     </label>
-                    <label>Emergency Contact 
+                    <label>Emergency Contact
                         <StyledInput type="text"
                             name="contact_name"
                             placeholder={contact_name}
@@ -150,10 +149,9 @@ function EditProfile() {
 
                     </StyledFieldSet>
 
-
                     <input type="submit" />
-                </StyledForm>
-            </StyledFormWrapper>
+                </form>
+            </div>
         </>
     )
 }

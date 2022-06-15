@@ -17,8 +17,6 @@ import FavoritesContainer from "./Components/FavoritesContainer"
 import 'react-toastify/dist/ReactToastify.css';
 import "./App.css"
 
-import HeroSection from "./Components/HeroSection";
-
 
 function App() {
   const dispatch = useDispatch()

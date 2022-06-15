@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom"
 import { toast } from 'react-toastify';
-import {GlobalStyle, StyledFormWrapper, StyledForm, StyledInput} from "../Components/Styles"
+import {  StyledForm, StyledInput} from "../Components/Styles"
 import {Button} from "../Components/pages/Button"
 
 import { fetchLogin } from '../Features/usersSlice';
@@ -40,9 +40,8 @@ function Login() {
 
     return (
         <>
-            <GlobalStyle />
             <h1>Login</h1>
-            <StyledFormWrapper >
+            <div className="form__wrapper">
                 <StyledForm onSubmit={loginUser}>
                     <label>
                         Email:
@@ -64,7 +63,7 @@ function Login() {
                     </label>
                     <Button buttonStyle="btn--outline"  type="submit">Login</Button>
                 </StyledForm>
-            </StyledFormWrapper>
+            </div>
             <div>
                 or you can <Link to="/signup"> Sign Up</Link>
             </div>
