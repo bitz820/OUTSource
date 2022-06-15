@@ -15,77 +15,82 @@ import hiv from "../media/hiv.png"
 const Home = () => {
 
   return (
-    <>
+    <div class="home__container">
       <div>
         <h1>OUTSource</h1>
         <em>Queer Care. Simple.</em>
       </div>
-      <div class="home__welcome">
-        <h1 className='heading'>
+      <div className="home__welcome">
+        <h1 class='heading'>
           We at OUTSource are passionate about finding and delivering the best mental and sexual health services – regardless of race, gender, gender identity, or sexual orientation – without judgment or stigma.
         </h1>
       </div>
-      <div class="home__hero-first">
-        <div class="img__container">
+      <div className="home__hero-first">
+        <div className="img__container">
           <img src={outsource} alt="placeholder" />
           {/* <img src={outsource2} alt="placeholder" /> */}
         </div>
-        <div class="content__container">
+        <div className="content__container">
           <h1>Health Care for YOU.</h1>
           <h3>A Note About COVID:</h3>
           <p>OUTSource's partners still require all individuals to wear a mask, be screened and practice social distancing. Please check with the individual provider and remain committed to controlling the spread of COVID-19.   Our patients, healthcare providers, and staff thank you!
           </p>
         </div>
       </div>
-      <div class="home__hero-second">
-        <div class="img__container">
+      <div className="home__hero-second">
+        <div className="img__container">
           <img src={outsource2} alt="placeholder" />
           <img src={outsource4} alt="placeholder" />
         </div>
-        <div class="content__container">
+        <div className="content__container">
           <h1>OUTSource has partnered with Kind Clinic</h1>
           <h3>We have your best interest in mind.</h3>
-          <div>
-            <p>
-              We strive to empower our communities to embrace their sexual health and wellness without fear, shame or judgement. We accepts all Texans, providing PrEP, PEP, STI Testing & Treatment, HIV Testing & Care and Gender Affirming Care.
-              Come see us. We'd like to see you!
-            </p>
+
+          <p>
+            We strive to empower our communities to embrace their sexual health and wellness without fear, shame or judgement. We accepts all Texans, providing PrEP, PEP, STI Testing & Treatment, HIV Testing & Care and Gender Affirming Care.
+            Come see us. We'd like to see you!
+          </p>
+
+        </div>
+      </div>
+      <div className='services'>
+        <div className="services__title">
+          <h1 >Some Services We Offer...</h1>
+        </div>
+
+
+        <div className="services__container">
+          <div className="service__item" id='prep'>
+            <img src={prep} alt="prep" />
+            <h1>PrEP</h1>
+            <p>Get Access to HIV Prevention Meds</p>
+          </div>
+          <div className="service__item" id='hiv'>
+            <img src={hiv} alt="hiv testing" />
+            <h1>HIV Testing</h1>
+            <p>HIV Testing available regardless of your </p>
+          </div>
+          <div className="service__item" id='sti'>
+            <img src={sti} alt="sti testing" />
+            <h1>STI Testing & Treatment</h1>
+            <p>Full Panel STI Testing and Treatment options, many offered at low to no cost</p>
+          </div>
+          <div className="service__item" id='psy'>
+            <img src={psy} alt="counseling" />
+            <h1>Counseling</h1>
+            <p>Meet with queer therapists and have guided feedback on cultivating healthy relationships</p>
+          </div>
+          <div className="service__item" id='event'>
+            <img src={outsource3} alt="events" />
+            <h1>Events</h1>
+            <p>Queer Events that support cultivating community</p>
           </div>
         </div>
       </div>
-      <div class="services__container">
-        <div>
-          <h1>Some Services We Offer...</h1>
-        </div>
-        <div class="service__item" id='prep'>
-          <img src={prep} alt="prep" />
-          <h1>PrEP</h1>
-          <p>Get Access to HIV Prevention Meds</p>
-        </div>
-        <div class="service__item" id='hiv'>
-          <img src={hiv} alt="hiv testing" />
-          <h1>HIV Testing</h1>
-          <p>HIV Testing available regardless of your </p>
-        </div>
-        <div class="service__item" id='sti'>
-          <img src={sti} alt="sti testing" />
-          <h1>STI Testing & Treatment</h1>
-          <p>Full Panel STI Testing and Treatment options, many offered at low to no cost</p>
-        </div>
-        <div class="service__item" id='psy'>
-          <img src={psy} alt="counseling" />
-          <h1>Counseling</h1>
-          <p>Meet with queer therapists and have guided feedback on cultivating healthy relationships</p>
-        </div>
-        <div class="service__item" id='event'>
-          <img src={outsource3} alt="events" />
-          <h1>Events</h1>
-          <p>Queer Events that support cultivating community</p>
-        </div>
-      </div>
 
-      <div class="home__hero-second">
-        <div class="content__container">
+
+      <div className="home__hero-second">
+        <div className="content__container">
           <h1>Community OUTReach</h1>
           <p>
             There's always a ton to do to meet people OUT!
@@ -94,7 +99,7 @@ const Home = () => {
             rel='noreferrer' href='https://members.austinlgbtchamber.com/events'><button>Check it OUT!</button></a>
           </p>
         </div>
-        <div class="img__container">
+        <div className="img__container">
           <img src={outsource5} alt="placeholder" />
           <img src={outsource7} alt="placeholder" />
 
@@ -103,7 +108,7 @@ const Home = () => {
       </div>
 
 
-    </>
+    </div>
   )
 }
 

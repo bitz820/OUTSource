@@ -27,7 +27,7 @@ function NavBar() {
             <div className="navbar-container container">
                 <NavLink exact to="/" className="navbar-logo" onClick={closeMobileMenu}>
                     <GiRainbowStar className="navbar-icon" />
-                    OUTSouce
+                    OUTSource
                 </NavLink>
                 <div className="menu-icon" onClick={() => setClick(!click)}>
                     {click ? <FaTimes /> : <FaBars />}

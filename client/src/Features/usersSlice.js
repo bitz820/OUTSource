@@ -1,5 +1,6 @@
 const initialState = {}
 
+
 // Authorize User is still Logged In
 const setUser = () => {
     return function (dispatch) {
@@ -44,7 +45,7 @@ const createSignUp = (user, navigate, toast) => {
                     })
                 } else {
                     r.json().then(err => {
-                        console.log(err.errors.map(e => {
+                        err.errors.map(e => {
                             toast.error(e, {
                                 theme: "colored",
                                 icon: "❤️🧡💛🖤💚💙💜",
@@ -56,7 +57,7 @@ const createSignUp = (user, navigate, toast) => {
                                 draggable: true,
                                 progress: undefined,
                             })
-                        }))
+                        })
                     })
 
                 }
