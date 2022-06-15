@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { updateAccountDetails } from "../Features/usersSlice"
-import { GlobalStyle, StyledFormWrapper, StyledForm, StyledInput, StyledFieldSet } from "./Styles"
+import {  StyledInput, StyledFieldSet } from "./Styles"
 
 
 function EditProfile() {
@@ -45,26 +45,25 @@ function EditProfile() {
 
     return (
         <>
-            <GlobalStyle />
-            <StyledFormWrapper>
-                <StyledForm onSubmit={updateDetails}>
+            <div className="form__wrapper">
+                <form className="form" onSubmit={updateDetails}>
                     <h1>Edit Profile</h1>
                     <label>First Name
-                        <StyledInput type="text"
+                        <input className='styled__input' type="text"
                             name="first_name"
                             placeholder={first_name}
                             value={profile.first_name}
                             onChange={handleChange} />
                     </label>
                     <label>Last Name
-                        <StyledInput type="text"
+                        <input className='styled__input' type="text"
                             name="last_name"
                             placeholder={last_name}
                             value={profile.last_name}
                             onChange={handleChange} />
                     </label>
                     <label>Age
-                        <StyledInput
+                        <input className='styled__input'
                             type="number"
                             name="age"
                             placeholder={age}
@@ -72,30 +71,30 @@ function EditProfile() {
                             onChange={handleChange} />
                     </label>
                     <label>Email
-                        <StyledInput type="email"
+                        <input className='styled__input' type="email"
                             name="email"
                             placeholder={email}
                             value={profile.email}
                             onChange={handleChange} />
                     </label>
-                    <label>Emergency Contact 
-                        <StyledInput type="text"
+                    <label>Emergency Contact
+                        <input className='styled__input' type="text"
                             name="contact_name"
                             placeholder={contact_name}
                             value={profile.contact_name}
                             onChange={handleChange} />
                     </label>
                     <label>Emergency Contact Number
-                        <StyledInput type="text"
+                        <input className='styled__input' type="text"
                             name="phone"
                             placeholder={phone}
                             value={profile.phone}
                             onChange={handleChange} />
                     </label>
 
-                    <StyledFieldSet>
+                    <fieldset className="styled__fieldset">
                         <label>Gender
-                            <select type="text"
+                            <select className='styled__input' type="text"
                                 name="gender"
                                 placeholder={gender}
                                 value={profile.gender}
@@ -109,7 +108,7 @@ function EditProfile() {
                         </label>
 
                         <label>Sexuality
-                            <select name="sexuality"
+                            <select className='styled__input' name="sexuality"
                                 placeholder={sexuality}
                                 value={profile.sexuality}
                                 onChange={handleChange}>
@@ -123,7 +122,7 @@ function EditProfile() {
                         </label>
 
                         <label>Reason for Signing Up
-                            <select name="reason_for_signup"
+                            <select className='styled__input' name="reason_for_signup"
                                 placeholder={reason_for_signup}
                                 value={profile.reason_for_signup}
                                 onChange={handleChange}>
@@ -136,7 +135,7 @@ function EditProfile() {
                         </label>
 
                         <label>How'd You Hear About Us?
-                            <select name="referred"
+                            <select className='styled__input' name="referred"
                                 placeholder={referred}
                                 value={profile.referred}
                                 onChange={handleChange}>
@@ -148,12 +147,11 @@ function EditProfile() {
                             </select>
                         </label>
 
-                    </StyledFieldSet>
-
+                    </fieldset>
 
                     <input type="submit" />
-                </StyledForm>
-            </StyledFormWrapper>
+                </form>
+            </div>
         </>
     )
 }

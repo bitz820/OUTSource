@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
 import { toast } from 'react-toastify'
 import { Button } from "../Components/pages/Button"
-import {GlobalStyle, StyledFormWrapper, StyledForm, StyledInput, StyledFieldSet} from "./Styles"
+import {  StyledForm, StyledInput, StyledFieldSet} from "./Styles"
 import { createSignUp } from "../Features/usersSlice"
 
 function Signup() {
@@ -56,12 +56,11 @@ function Signup() {
 
     return (
     <>
-        <GlobalStyle />
-        <StyledFormWrapper >
-            <StyledForm onSubmit={signUserUp}>
+        <div className="form__wrapper">
+            <form className='form' onSubmit={signUserUp}>
                 <h1>Sign Up</h1>
                 <label>First Name
-                    <StyledInput
+                    <input className="styled__input"
                         type="text"
                         placeholder="First Name"
                         name="first_name"
@@ -71,7 +70,7 @@ function Signup() {
                 </label>
                 <label>
                     Last Name
-                    <StyledInput
+                    <input className="styled__input"
                         type="text"
                         placeholder="Last Name"
                         name="last_name"
@@ -81,7 +80,7 @@ function Signup() {
                 </label>
                 <label>
                     Email
-                    <StyledInput
+                    <input className="styled__input"
                         type="email"
                         placeholder="Email Address"
                         name="email"
@@ -91,7 +90,7 @@ function Signup() {
                 </label>
                 <label>
                     Password
-                    <StyledInput
+                    <input className="styled__input"
                         type="password"
                         placeholder="Password"
                         name="password"
@@ -101,7 +100,7 @@ function Signup() {
                 </label>
                 <label>
                     Age
-                    <StyledInput
+                    <input className="styled__input"
                         type="number"
                         placeholder="Age"
                         name="age"
@@ -110,23 +109,23 @@ function Signup() {
                     />
                     </label>
                     <label>Emergency Contact 
-                        <StyledInput type="text"
+                        <input className="styled__input" type="text"
                             name="contact_name"
                             placeholder="Contact Name"
                             value={contact_name}
                             onChange={handleChange} />
                     </label>
                     <label>Emergency Contact Number
-                        <StyledInput type="text"
+                        <input className="styled__input" type="text"
                             name="phone"
                             placeholder="Phone Number"
                             value={phone}
                             onChange={handleChange} />
                     </label>
 
-                <StyledFieldSet>
+                <fieldset className="styled__fieldset">
                     <label>Gender
-                        <select name="gender" onChange={handleChange}>
+                        <select className='styled__input' name="gender" onChange={handleChange}>
                             <option value="">--Please choose an option--</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
@@ -137,7 +136,7 @@ function Signup() {
                     </label>
 
                     <label>Sexuality
-                        <select name="sexuality" onChange={handleChange}>
+                        <select className='styled__input' name="sexuality" onChange={handleChange}>
                             <option value="">--Please choose an option--</option>
                             <option value="Gay">Gay</option>
                             <option value="Lesbian">Lesbian</option>
@@ -148,7 +147,7 @@ function Signup() {
                     </label>
 
                     <label>Reason for Signing Up
-                        <select name="reason_for_signup" onChange={handleChange}>
+                        <select className='styled__input' name="reason_for_signup" onChange={handleChange}>
                             <option value="">--Please choose an option--</option>
                             <option value="STI Testing">STI Testing</option>
                             <option value="PrEP">PrEP</option>
@@ -159,7 +158,7 @@ function Signup() {
                     </label>
 
                     <label>How'd You Hear About Us?
-                        <select name="referred" onChange={handleChange}>
+                        <select className='styled__input' name="referred" onChange={handleChange}>
                             <option value="">--Please choose an option--</option>
                             <option value="Internet">Internet</option>
                             <option value="Friend">Friend</option>
@@ -169,11 +168,11 @@ function Signup() {
                         </select>
                     </label>
 
-                </StyledFieldSet>
+                </fieldset>
 
                 <Button buttonStyle="btn--outline" type="submit">Submit</Button>
-            </StyledForm>
-        </StyledFormWrapper >
+            </form>
+        </div >
         or go back to <Link to="/login"> Log In</Link>
     </>
     )

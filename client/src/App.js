@@ -15,8 +15,7 @@ import ProtectedRoutes from "./Components/ProtectedRoutes"
 import ClinicContainer from "./Components/ClinicContainer";
 import FavoritesContainer from "./Components/FavoritesContainer"
 import 'react-toastify/dist/ReactToastify.css';
-
-import HeroSection from "./Components/HeroSection";
+import "./App.css"
 
 
 function App() {
@@ -28,7 +27,7 @@ function App() {
 
 
   return (
-    <AppStyle className="App">
+    <App className="App">
       <NavBar />
       <ToastContainer
         theme="colored"
@@ -42,7 +41,7 @@ function App() {
         draggable
         pauseOnHover />
       <Routes>
-        <Route exact path="/hero" element={<HeroSection/>} />
+        {/* <Route exact path="/hero" element={<HeroSection/>} /> */}
         <Route exact path="/" element={<Home />} />
         <Route exact path="/clinics" element={<ClinicContainer />} />
         <Route element={<ProtectedRoutes />}>
@@ -54,7 +53,7 @@ function App() {
         <Route exact path="/signup" element={<Signup />} />
       </Routes>
       <Footer />
-    </AppStyle>
+    </App>
   );
 
 }
