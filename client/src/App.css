@@ -28,6 +28,10 @@ body {
     --animate-duration: 300ms;
 }
 
+/* select {
+    color: black !important;
+} */
+
 .warning__button {
     padding: 8px 20px;
     border-radius: 4px;
@@ -760,20 +764,18 @@ flex-flow: column;
     padding: 10px;
     margin: 20px 0;
     color:black;
-
-
 }
 
 .styled__input {
     display: block;
     width: 100%;
     text-align: left;
-    /* background-color: #eee; */
     height: 40px;
     border-radius: 5px;
+    color: black;
     border: 1px solid #ddd;
     margin: 10px 0 20px 0;
-    padding: 20px;
+    /* padding: 20px; */
     box-sizing: border-box;
 }
 

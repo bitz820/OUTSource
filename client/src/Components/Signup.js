@@ -146,8 +146,10 @@ function Signup() {
                     </label>
 
                     <label>Reason for Signing Up
-                        <select className='styled__input' name="reason_for_signup" onChange={handleChange}>
-                            <option value="">--Please choose an option--</option>
+                        <select className='styled__input' 
+                        name="reason_for_signup" 
+                        onChange={handleChange}>
+                            <option value="" selected>--Please choose an option--</option>
                             <option value="STI Testing">STI Testing</option>
                             <option value="PrEP">PrEP</option>
                             <option value="HIV Testing">HIV Testing</option>
