@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::API
     include ActionController::Cookies
+    include ActionController::MimeResponds
+    
     rescue_from ActiveRecord::RecordInvalid, with: :render_invalid
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 

@@ -13,22 +13,30 @@ class UsersController < ApplicationController
     end
 
     # Signs a User up for the app
-    def create 
-        user = User.create!(user_params)
-        session[:user_id] = user.id
-        render json: user, status: :created
+    # def create 
+    #     user = User.create!(user_params)
+    #     session[:user_id] = user.id
+    #     render json: user, status: :created
+    # end
 
+
+    def create
+        @user = User.create!(user_params)
+        
         respond_to do |format|
-            if user.save
-              # Tell the UserMailer to send a welcome email after save
-              UserMailer.with(user: user).welcome_email.deliver_later
-      
-              format.html { redirect_to(user, notice: 'User was successfully created.') }
-              format.json { render json: user, status: :created, location: user }
-            else
-              format.html { render action: 'new' }
-              format.json { render json: user.errors, status: :unprocessable_entity }
-    end
+            if @user.save
+                session[:user_id] = @user.id
+            # Tell the UserMailer to send a welcome email after save
+            UserMailer.with(user: @user).welcome_email.deliver_later
+    
+            format.html { redirect_to(@user, notice: 'User was successfully created.') }
+            format.json { render json: @user, status: :created, location: @user }
+          else
+            format.html { render action: 'new' }
+            format.json { render json: @user.errors, status: :unprocessable_entity }
+          end
+        end
+      end
 
     # Updates a logged in User's Profile
     def update
