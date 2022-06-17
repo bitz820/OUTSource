@@ -6,6 +6,7 @@ import outsource4 from "../media/outsource4.jpeg"
 import outsource5 from "../media/outsource5.jpeg"
 import outsource6 from "../media/outsource6.jpeg"
 import outsource7 from "../media/outsource7.jpeg"
+import logo from "../media/logo.png"
 
 import sti from "../media/sti.png"
 import prep from "../media/prep.png"
@@ -17,8 +18,10 @@ const Home = () => {
   return (
     <div className="home__container">
       <div>
-        <h1>OUTSource</h1>
-        <em>Queer Care. Simple.</em>
+      <img id="logo" src={logo} alt="logo" />
+
+        {/* <h1>OUTSource</h1>
+        <em>Queer Care. Simple.</em> */}
       </div>
       <div className="home__welcome">
         <h1 className='heading'>

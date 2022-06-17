@@ -223,10 +223,20 @@ a#appt:hover+.icon {
 
 /* Home Styling */
 
+#logo{
+    max-width: 300px;
+    min-height: 200px;
+}
+
+.heading{
+}
+
 .home__welcome {
+    /* max-width: 70%; */
     border-bottom: 10px solid black;
+    padding: 0px 175px;
     font-size: .7rem;
-    /* border: 5px solid red; */
+    border: 5px solid red;
 }
 
 .home__hero-first {
@@ -347,6 +357,11 @@ a#appt:hover+.icon {
     border: 3px solid white
 }
 
+.home__hero-second .img__container img {
+    max-width: 200px;
+    max-height: 150px;
+}
+
 @media screen and (max-width: 667px) {
 
     .content__container p {
@@ -362,7 +377,8 @@ a#appt:hover+.icon {
     .home__welcome {
         border-bottom: 10px solid black;
         font-size: .5rem;
-        min-width: 100%;
+        max-width: 100%;
+        padding: 10px;
     }
 
     .home__hero-first {
@@ -442,8 +458,8 @@ a#appt:hover+.icon {
     margin-right: 0.5rem;
 }
 
-.navbar-logo:hover {
-    color: #f5abb9
+.header__logo span:hover {
+    color: white !important
 }
 
 .nav-menu {
@@ -504,8 +520,6 @@ a#appt:hover+.icon {
         z-index: 1;
         margin-top: 0;
         padding-left: 0;
-
-        /* width: 100vw; */
     }
 
     .nav-links {
@@ -517,10 +531,6 @@ a#appt:hover+.icon {
         padding: 0;
     }
 
-    .nav-links.active {
-        /* margin: 0;
-        padding: 0; */
-    }
 
     .nav-links:hover {
         color: #f5abb9;
@@ -1117,6 +1127,11 @@ h1 {
     color: orange
 }
 
+#yellow {
+    color: yellow
+
+}
+
 #green {
     color: green
 }
@@ -1125,8 +1140,20 @@ h1 {
     color: blue
 }
 
+#indigo {
+    color: indigo
+}
+
 #purple {
     color: violet
+}
+
+#brown {
+    color: brown
+}
+
+#black {
+    color: black;
 }
 
 

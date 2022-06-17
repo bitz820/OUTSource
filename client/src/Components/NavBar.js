@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
-import { GiRainbowStar } from "react-icons/gi"
+// import logo from "../media/logo.png"
 import { FaBars, FaTimes } from "react-icons/fa"
 import { toast } from "react-toastify"
 
@@ -10,6 +10,20 @@ import { logoutUser } from '../Features/usersSlice'
 
 
 function NavBar() {
+
+    const titleHeader = <div className='header__logo'>
+        <span id='red'>O</span>
+        <span id='orange'>U</span>
+        <span id='yellow'>T</span>
+        <span id='green'>S</span>
+        <span id='blue'>o</span>
+        <span id='indigo'>u</span>
+        <span id='purple'>r</span>
+        <span id='brown'>c</span>
+        <span id='black'>e</span>
+    </div>
+
+
     const user = useSelector(state => state.user)
     const dispatch = useDispatch()
     const [click, setClick] = useState(false)
@@ -26,8 +40,9 @@ function NavBar() {
         <div className="navbar">
             <div className="navbar-container container">
                 <NavLink exact to="/" className="navbar-logo" onClick={closeMobileMenu}>
-                    <GiRainbowStar className="navbar-icon" />
-                    OUTSource
+                    {/* <img id="logo" src={logo} alt="logo" /> */}
+                    {/* OUTSource */}
+                    {titleHeader}
                 </NavLink>
                 <div className="menu-icon" onClick={() => setClick(!click)}>
                     {click ? <FaTimes /> : <FaBars />}
