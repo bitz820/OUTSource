@@ -18,16 +18,8 @@ function FavoriteCard({ data }) {
 
 
     const linkToWebsite = accepting_new_patients ? 
-    // <a
-    //   href={url}
-    //   target="_blank"
-    //   rel='noreferrer'
-    // >
-    // <button className="btn" id='appt__btn'>Schedule an Appointment!</button>
-
     <div className = "link__wrapper" >
     <a 
-    // className='btn'
     id="appt" 
     href={url}
         target="_blank"
@@ -80,7 +72,7 @@ function FavoriteCard({ data }) {
         {/* Right Side of Card */}
         <div className='favorite__card__info'>
           <h1 id="purple">HOW Do I...</h1>
-          <div>
+          <div id="insurance">
             <h3>See About Insurance?</h3>
             <span>{insuranceMessage}</span>
           </div>

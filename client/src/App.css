@@ -4,10 +4,6 @@
 
 /* Global Styles */
 
-/* * {
-    max-width: 100vw;
-} */
-
 body {
     text-align: center;
     box-sizing: border-box;
@@ -65,14 +61,13 @@ body {
 /* Login/Signup arrow buttons */
 
 #signup__submit {
-    /* border: 5px solid red; */
     display: flex;
     justify-content: center;
     align-self: center;
     max-width: fit-content;
 }
 
-.swipe__btn{
+.swipe__btn {
     display: flex;
     justify-content: center;
     width: fit-content;
@@ -83,7 +78,6 @@ body {
 #dub-arrow {
     width: 100%;
     height: 100%;
-    background: lightgreen;
     left: -200px;
     position: absolute;
     padding: 0;
@@ -101,13 +95,13 @@ body {
 
 .swipe__btn:hover #dub-arrow {
     left: 0;
+    background: lightgreen;
+
 }
 
 .swipe__btn:hover a {
     left: 150px;
-
 }
-
 
 .link__wrapper {
     display: flex;
@@ -118,7 +112,6 @@ body {
 a#appt {
     border-radius: 20px;
     display: block;
-    /* width: 250px; */
     height: 40px;
     margin-left: 12px;
     font-weight: bold;
@@ -126,7 +119,6 @@ a#appt {
     background: #333;
     text-align: center;
     color: #f5abb9;
-    /* text-transform: uppercase; */
     letter-spacing: 1px;
     border: 3px solid #f5abb9;
     transition: all .35s;
@@ -136,9 +128,7 @@ a#appt {
     width: 30px;
     height: 30px;
     border: 3px solid transparent;
-    /* position: absolute; */
     transform: rotate(45deg);
-    /* right: ; */
     top: 0;
     z-index: -1;
     transition: all .35s;
@@ -151,7 +141,6 @@ a#appt {
     left: calc(50% - 10px);
     transform: rotate(-45deg);
     fill: #333;
-    /* z-index: 30; */
     transition: all .35s;
 }
 
@@ -160,7 +149,6 @@ a#appt:hover {
     border: 3px solid #333;
     background: #5bcffb;
     color: #333;
-    /* margin-right: 20px; */
 }
 
 a#appt:hover+.icon {
@@ -174,10 +162,6 @@ a#appt:hover+.icon {
     font-size: .7rem;
     padding: 0px 10px;
 }
-
-
-
-
 
 @media screen and (max-width: 667px) {
 
@@ -194,9 +178,7 @@ a#appt:hover+.icon {
     .link__wrapper {
         margin-left: 15px;
     }
-
 }
-
 
 /* Delete Account Btn */
 .warning__button {
@@ -218,25 +200,17 @@ a#appt:hover+.icon {
     border: none;
 }
 
-
-
-
 /* Home Styling */
 
-#logo{
+#logo {
     max-width: 300px;
     min-height: 200px;
 }
 
-.heading{
-}
-
 .home__welcome {
-    /* max-width: 70%; */
     border-bottom: 10px solid black;
     padding: 0px 175px;
     font-size: .7rem;
-    border: 5px solid red;
 }
 
 .home__hero-first {
@@ -255,7 +229,6 @@ a#appt:hover+.icon {
     flex-flow: row;
     max-width: 100vw;
     justify-content: space-around;
-    /* border: 5px solid red; */
 }
 
 #check {
@@ -271,7 +244,6 @@ a#appt:hover+.icon {
 .content__container {
     display: flex;
     flex-flow: column;
-    /* justify-content: space-between; */
     align-items: center;
 }
 
@@ -288,8 +260,6 @@ a#appt:hover+.icon {
 
 #about-box {
     display: flex;
-    /* align-content: center;
-    justify-content: center; */
     max-width: 400px;
     align-items: flex-start;
 }
@@ -304,7 +274,6 @@ a#appt:hover+.icon {
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
-    /* grid-template-columns: repeat(1fr, 3fr); */
 }
 
 #services__title {
@@ -313,7 +282,6 @@ a#appt:hover+.icon {
 }
 
 .service__item {
-    /* background: #fff; */
     display: flex;
     flex-direction: column;
     background: white;
@@ -366,13 +334,11 @@ a#appt:hover+.icon {
 
     .content__container p {
         flex-flow: column;
-        /* border: red 5px solid; */
     }
 
     .home__container {
         max-width: 100%;
     }
-
 
     .home__welcome {
         border-bottom: 10px solid black;
@@ -403,16 +369,12 @@ a#appt:hover+.icon {
     }
 
     #services__title {
-        /* border: 5px red solid; */
         font-size: 1.5rem;
         padding: 0px;
         margin: 0px;
         max-width: fit-content;
         align-self: center;
-
     }
-
-
 }
 
 /* Nav Bar Styling */
@@ -440,8 +402,8 @@ a#appt:hover+.icon {
     max-width: 1300px;
     margin-right: auto;
     margin-left: auto;
-    padding-right: 50px;
-    padding-left: 50px;
+    /* padding-right: 50px; */
+    padding-left: 20px;
 }
 
 .navbar-logo {
@@ -531,7 +493,6 @@ a#appt:hover+.icon {
         padding: 0;
     }
 
-
     .nav-links:hover {
         color: #f5abb9;
         transform: scale(1.2);
@@ -567,6 +528,7 @@ a#appt:hover+.icon {
         color: #fff;
         font-size: 2rem;
     }
+
 }
 
 /* Footer Styling */
@@ -713,6 +675,126 @@ a#appt:hover+.icon {
     }
 }
 
+/* Clinc Container Styles */
+.search__container{
+    display: flex;
+    flex-flow: column;
+    text-align: left;
+    /* padding: 10px; */
+}
+
+.insurance__toggle {
+    width: 80px;
+    height: 26px;
+    background: #333;
+    margin-right: 20px;
+    position: relative;
+    border-radius: 50px;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);
+  }
+  .insurance__toggle:after {
+    content: 'OFF';
+    color: red;
+    position: absolute;
+    right: 10px;
+    z-index: 0;
+    font: 12px/26px Arial, sans-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.15);
+  }
+  .insurance__toggle:before {
+    content: 'ON';
+    color: #27ae60;
+    position: absolute;
+    left: 10px;
+    z-index: 0;
+    font: 12px/26px Arial, sans-serif;
+    font-weight: bold;
+  }
+  .insurance__toggle label {
+    /* display: block; */
+    width: 34px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    z-index: 1;
+    background: #fcfff4;
+    background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  }
+  .insurance__toggle input[type=checkbox] {
+    visibility: hidden;
+  }
+  .insurance__toggle input[type=checkbox]:checked + label {
+    left: 43px;
+  }
+
+  .patient__toggle {
+    width: 80px;
+    height: 26px;
+    background: #333;
+    /* margin: 20px 0; */
+    margin-right: 20px;
+    position: relative;
+    border-radius: 50px;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);
+  }
+  .patient__toggle:after {
+    content: 'OFF';
+    color: red;
+    position: absolute;
+    right: 10px;
+    z-index: 0;
+    font: 12px/26px Arial, sans-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.15);
+  }
+  .patient__toggle:before {
+    content: 'ON';
+    color: #27ae60;
+    position: absolute;
+    left: 10px;
+    z-index: 0;
+    font: 12px/26px Arial, sans-serif;
+    font-weight: bold;
+  }
+  .patient__toggle label {
+    /* display: block; */
+    width: 34px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    z-index: 1;
+    background: #fcfff4;
+    background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  }
+  .patient__toggle input[type=checkbox] {
+    visibility: hidden;
+  }
+  .patient__toggle input[type=checkbox]:checked + label {
+    left: 43px;
+  }
+
+
+  .toggle__buttons{
+    display: flex;
+    flex-flow: column;
+  }
+
+  .toggle__container{
+    display: flex;
+    padding: 10px;
+  }
+
 /* CARD STYLING */
 
 .wrapper {
@@ -734,7 +816,6 @@ a#appt:hover+.icon {
     margin: 20px;
     border: 5px solid rgb(133, 90, 133);
     border-radius: 1rem;
-
     padding: 10px 0;
 }
 
@@ -750,8 +831,6 @@ a#appt:hover+.icon {
     margin-top: 20px;
     margin-bottom: 0;
     justify-content: space-around;
-    /* align-items: center; */
-    /* margin: 10px; */
 }
 
 .card__description img {
@@ -841,14 +920,11 @@ a#appt:hover+.icon {
     }
 }
 
-
-/* .favorite__btn{
-    position: absolute;
-    bottom: 0;
-} */
-
-
 @media screen and (max-width: 667px) {
+
+    /* .toggle__buttons{
+        align-items: left;
+    } */
 
     .wrapper {
         margin-left: 25px;
@@ -857,7 +933,6 @@ a#appt:hover+.icon {
         grid-template-columns: 1fr;
         align-content: center;
         place-items: center;
-        /* border: 5px red solid; */
         max-width: fit-content;
     }
 
@@ -875,7 +950,6 @@ a#appt:hover+.icon {
     }
 
     .card__title {
-        /* line-height: 1.9rem; */
         margin-bottom: .5rem;
     }
 
@@ -916,7 +990,6 @@ a#appt:hover+.icon {
     margin: 10px;
 }
 
-
 .profile__header {
     display: flex;
     flex-flow: row;
@@ -943,7 +1016,8 @@ a#appt:hover+.icon {
 }
 
 .profile__details {
-    flex-grow: 3;
+    flex-grow: 2;
+    padding-left: 50px;
 }
 
 .profile__blurb {
@@ -953,7 +1027,6 @@ a#appt:hover+.icon {
     justify-content: space-evenly;
     background-color: #f5abb9;
     padding: 10px;
-    /* border-bottom: 5px solid black; */
     border-right: 5px solid black;
 }
 
@@ -970,7 +1043,7 @@ a#appt:hover+.icon {
     padding-left: 10px;
 }
 
-#edit__div{
+#edit__div {
     min-height: 140px;
     display: flex;
     flex-flow: column;
@@ -1011,8 +1084,6 @@ a#appt:hover+.icon {
         width: 100%;
     }
 
-
-
     .warning__button {
         transition: all .3s ease-out;
         background-color: #f00946;
@@ -1045,8 +1116,8 @@ a#appt:hover+.icon {
     margin: 20px;
     min-height: 50vh;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4);
-
 }
+
 
 .styled__fieldset {
     border: 1px solid #ddd;
@@ -1055,10 +1126,6 @@ a#appt:hover+.icon {
     margin: 20px 0;
     color: black;
 }
-
-
-
-
 
 .styled__input {
     display: block;
@@ -1069,17 +1136,13 @@ a#appt:hover+.icon {
     color: black;
     border: 1px solid #ddd;
     margin: 10px 0 20px 0;
-    /* padding: 20px; */
     box-sizing: border-box;
 }
-
 
 .favorite__wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: red solid 3px; */
-
 }
 
 .favorite__card {
@@ -1094,16 +1157,8 @@ a#appt:hover+.icon {
     background-color: white;
 }
 
-.contact__div {
-    /* display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center; */
-}
-
 .favorite__card__clinic__details {
     display: grid;
-    /* grid-template-columns: 1fr 2fr; */
     width: 60%;
 }
 
@@ -1112,6 +1167,10 @@ a#appt:hover+.icon {
     flex-flow: column;
     align-items: center;
     justify-content: space-around;
+}
+
+#insurance{
+    padding: 0px 20px;
 }
 
 .favorite__card__info h3,
@@ -1129,7 +1188,6 @@ h1 {
 
 #yellow {
     color: yellow
-
 }
 
 #green {
@@ -1163,10 +1221,7 @@ h1 {
         display: flex;
         flex-direction: column;
         font-size: .7rem;
-        /* height: 250px; */
         width: 70%;
-        /* height: fit-content; */
-        /* justify-content: space-around; */
         margin: 20px;
         padding: 10px 0;
     }
@@ -1185,8 +1240,6 @@ h1 {
     .favorite__card__top {
         display: flex;
         justify-content: space-evenly;
-        /* align-items: center; */
-        /* flex-direction:  */
     }
 
     .favorite__card__top p {
@@ -1196,7 +1249,6 @@ h1 {
     .favorite__card__bottom {
         display: flex;
         justify-content: space-evenly;
-
     }
 
 }
@@ -1208,7 +1260,6 @@ h1 {
     flex-flow: column;
     justify-content: space-between;
     min-height: 70vh;
-    /* min */
 }
 
 .link__other {
@@ -1217,8 +1268,4 @@ h1 {
     align-items: center;
     justify-content: center;
     min-height: 200px;
-    /* display: inline-block; */
 }
-
-
-@media screen and (max-width: 667px) {}

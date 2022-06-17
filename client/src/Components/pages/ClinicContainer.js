@@ -10,7 +10,7 @@ const ClinicContainer = () => {
   const [serviceFilter, setServiceFilter] = useState("")
 
   const allClinics = useSelector(state => state.clinics.clinics)
-console.log(allClinics)
+  console.log(allClinics)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -31,37 +31,56 @@ console.log(allClinics)
   return (
     <div>
       <h1>Clinics</h1>
-      <div className="search-container">
-        <label>
-          <select name="services" onChange={(e) => setServiceFilter(e.target.value)}>
-            <option value="">--Please choose a service to filter--</option>
-            <option value="">All Services</option>
-            <option value="HIV Testing">HIV Testing</option>
-            <option value="PrEP">PrEP</option>
-            <option value="STI Testing">STI Testing</option>
-            <option value="Counseling">Counseling</option>
-          </select>
-        </label>
-        <br />
-        <label>
-          <input
-            type="checkbox"
-            value="takes_uninsured"
-            name="takes_uninsured"
-            onChange={() => setInsuranceChecked(!insuranceChecked)}
-          />
-          Takes Uninsured?
-        </label>
-        <br />
-        <label>
-          <input
-            type="checkbox"
-            value="takes_uninsured"
-            name="takes_uninsured"
-            onChange={() => setNewPatientChecked(!newPatientChecked)}
-          />
-          Search Only Clinics Accepting New Patients
-        </label>
+      <div className="search__container">
+        <div>
+          <label>
+            <select name="services" onChange={(e) => setServiceFilter(e.target.value)}>
+              <option disabled value="">--Please choose a service to filter--</option>
+              <option value="">All Services</option>
+              <option value="HIV Testing">HIV Testing</option>
+              <option value="PrEP">PrEP</option>
+              <option value="STI Testing">STI Testing</option>
+              <option value="Counseling">Counseling</option>
+            </select>
+          </label>
+        </div>
+        <div className="toggle__buttons">
+          <div className="toggle__container">
+            <div className="insurance__toggle">
+              <input type="checkbox" value="takes_uninsured" id="insurance__toggle" name="takes_uninsured" onChange={() => setInsuranceChecked(!insuranceChecked)} />
+              <label for="insurance__toggle"></label>
+            </div>
+            Takes Uninsured?
+          </div>
+          <div className="toggle__container">
+            <div className="patient__toggle">
+              <input type="checkbox" value="takes_uninsured" id="patient__toggle" name="takes_uninsured"
+                onChange={() => setNewPatientChecked(!newPatientChecked)}
+              />
+              <label for="patient__toggle"></label>
+            </div>
+              Accepting New Patients?
+
+          </div>
+          {/* <label>
+            <input
+              type="checkbox"
+              value="takes_uninsured"
+              name="takes_uninsured"
+              onChange={() => setInsuranceChecked(!insuranceChecked)}
+            />
+            Takes Uninsured?
+          </label> */}
+          {/* <label>
+            <input
+              type="checkbox"
+              value="takes_uninsured"
+              name="takes_uninsured"
+              onChange={() => setNewPatientChecked(!newPatientChecked)}
+            />
+            Search Only Clinics Accepting New Patients
+          </label> */}
+        </div>
       </div>
       <motion.div layout className="wrapper">
         {renderClinicCards}
