@@ -15,13 +15,13 @@ import hiv from "../media/hiv.png"
 const Home = () => {
 
   return (
-    <div class="home__container">
+    <div className="home__container">
       <div>
         <h1>OUTSource</h1>
         <em>Queer Care. Simple.</em>
       </div>
       <div className="home__welcome">
-        <h1 class='heading'>
+        <h1 className='heading'>
           We at OUTSource are passionate about finding and delivering the best mental and sexual health services – regardless of race, gender, gender identity, or sexual orientation – without judgment or stigma.
         </h1>
       </div>
@@ -91,8 +91,10 @@ const Home = () => {
           <p>
             There's always a ton to do to meet people OUT!
           </p>
-          <p>Get off the couch and <a target="_blank"
-            rel='noreferrer' href='https://members.austinlgbtchamber.com/events'><button>Check it OUT!</button></a>
+          <p>Get off the couch and  <a target="_blank"
+            rel='noreferrer' href='https://members.austinlgbtchamber.com/events'>
+              <div class="btn" id='check'>Check it OUT</div>
+          </a>
           </p>
         </div>
         <div className="img__container">

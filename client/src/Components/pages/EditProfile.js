@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import { updateAccountDetails } from "../Features/usersSlice"
+import { updateAccountDetails } from "../../Features/usersSlice"
 
 
-function EditProfile() {
+const EditProfile = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const userDetails = useSelector(state => state.user)
@@ -145,10 +145,14 @@ function EditProfile() {
                                 <option value="Other">Other</option>
                             </select>
                         </label>
-
                     </fieldset>
-
-                    <input type="submit" />
+                    <div className="swipe__btn">
+                        <button className='btn'>
+                            <div id="dub-arrow">
+                                <img src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true" alt="" />
+                            </div>
+                            Submit Changes</button>
+                    </div>
                 </form>
             </div>
         </>

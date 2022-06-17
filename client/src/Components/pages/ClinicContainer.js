@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
-import { fetchClinics } from "../Features/clinicsSlice";
+import { fetchClinics } from "../../Features/clinicsSlice";
 import { motion } from 'framer-motion'
-import Card from "./Card"
+import Card from "../Card"
 
 const ClinicContainer = () => {
   const [insuranceChecked, setInsuranceChecked] = useState(false)

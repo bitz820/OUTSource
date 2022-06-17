@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { toast } from 'react-toastify';
-import {Button} from "../Components/pages/Button"
-
 import { fetchLogin } from '../Features/usersSlice';
 
 function Login() {
@@ -36,7 +34,7 @@ function Login() {
     }
 
     return (
-        <>
+        <div className='login__container'>
             <h1>Login</h1>
             <div className="form__wrapper">
                 <form className='form' onSubmit={loginUser}>
@@ -58,13 +56,25 @@ function Login() {
                             type="password"
                         />
                     </label>
-                    <Button buttonStyle="btn--outline"  type="submit">Login</Button>
+                    <div className="swipe__btn">
+                        <button
+                            className='btn swipe__btn'
+                            type="submit">
+                            <div id="dub-arrow">
+                                <img src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true" alt="" />
+                            </div>
+                            Login</button>
+                    </div>
                 </form >
             </div>
-            <div>
-                or you can <Link to="/signup"> Sign Up</Link>
+            <div className='link__other'>
+                <button className='btn swipe__btn' onClick={() => navigate('/signup')}>
+                    <div id="dub-arrow">
+                        <img src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true" alt="" />
+                    </div>
+                    or Sign Up!</button>
             </div>
-        </>
+        </div>
     )
 }
 

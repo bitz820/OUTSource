@@ -1,13 +1,9 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
-import { Button } from "./pages/Button"
 import { toast } from "react-toastify"
 import randomColor from "randomcolor";
 import { motion } from 'framer-motion'
-
-
-
 
 import hivPic from "../media/hiv.png"
 import prepPic from "../media/prep.png"
@@ -82,8 +78,10 @@ function Card({ info }) {
                     <h4>{phone}</h4>
                 </div>
                 <div>
-                    <Button onClick={addToFavorites}
-                        className="favorite__btn" buttonSize="btn--wide" buttonColor="primary">Favorite This Clinic </Button>
+                    <button onClick={addToFavorites}
+                        className="favorite__btn"
+                        // id="favorite__btn" 
+                        >Favorite This Clinic </button>
                 </div>
             </div>
         </motion.div>

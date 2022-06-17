@@ -17,15 +17,33 @@ function FavoriteCard({ data }) {
   const removeFavorite = () => dispatch(deleteFavorite(favClinic.id, toast))
 
 
-  const linkToWebsite = accepting_new_patients ? <a
+    const linkToWebsite = accepting_new_patients ? 
+    // <a
+    //   href={url}
+    //   target="_blank"
+    //   rel='noreferrer'
+    // >
+    // <button className="btn" id='appt__btn'>Schedule an Appointment!</button>
+
+    <div className = "link__wrapper" >
+    <a 
+    // className='btn'
+    id="appt" 
     href={url}
-    target="_blank"
+        target="_blank"
     rel='noreferrer'
-  >
-    <button>Schedule an Appointment!</button>
+><p>Schedule an Appointment!</p>
   </a>
+    <div className="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
+        <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
+      </svg>
+    </div>
+  </div >
+
+  // </a>
     :
-    "Currently not accepting new patients"
+  "Currently not accepting new patients"
 
   const insuranceMessage = takes_uninsured ? "✅ Currently accepting Patients without Insurance" : "⚠️ Provider only takes Insured Patients"
 
@@ -66,14 +84,14 @@ function FavoriteCard({ data }) {
             <h3>See About Insurance?</h3>
             <span>{insuranceMessage}</span>
           </div>
-          <div>
+          <div className='contact__div'>
             <h3>Get In Contact?</h3>
             📞{phone}
             <p>{accepting_new_patients ? linkToWebsite : null}</p>
           </div>
           <div>
             <h3>Rescind a Care Request?</h3>
-            <button className='warning__button' onClick={removeFavorite}>Remove from Favorites</button>
+            <button className='btn warning__button' onClick={removeFavorite}>Remove from Favorites</button>
           </div>
         </div>
       </div>

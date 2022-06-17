@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import FavoriteCard from './FavoriteCard'
-import { fetchFavorites } from "../Features/favoritesSlice"
+import FavoriteCard from '../FavoriteCard'
+import { fetchFavorites } from "../../Features/favoritesSlice"
 
 function FavoritesContainer() {
   const dispatch = useDispatch()

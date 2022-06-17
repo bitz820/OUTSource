@@ -4,8 +4,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { toast } from 'react-toastify'
 import { BsFilePersonFill } from "react-icons/bs"
 import { AiFillPhone, AiOutlineContacts, AiFillInfoCircle, AiFillQuestionCircle } from "react-icons/ai"
-import { deleteAccount } from "../Features/usersSlice"
-import { Button } from './pages/Button'
+import { deleteAccount } from "../../Features/usersSlice"
 
 function ProfilePage() {
   const user = useSelector(state => state.user)
@@ -48,7 +47,7 @@ function ProfilePage() {
     <>
       <div className='profile__title'>
         <h1>Profile Details</h1>
-        < button className="warning__button btn--red"
+        < button className="warning__button btn"
           onClick={deleteUser}>Delete Account</button>
       </div>
 
@@ -98,7 +97,10 @@ function ProfilePage() {
               <AiFillQuestionCircle />
               <p>Referred by: {user.referred}</p>
             </div>
-            <Button onClick={goToEditProfile}>Edit Profile</Button>
+            <div id='edit__div'>
+            <button className='btn' id="edit" onClick={goToEditProfile}>Edit Profile</button>
+
+            </div>
           </div>
         </div>
       </div >

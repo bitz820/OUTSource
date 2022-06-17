@@ -41,7 +41,7 @@ function Footer() {
                         type='email'
                         placeholder='Your Email'
                     />
-                    <button onClick={handleSubscribe}>Subscribe! </button>
+                    <button className='btn' id='subscribe' onClick={handleSubscribe}>Subscribe! </button>
                 </form>
 
             </section>

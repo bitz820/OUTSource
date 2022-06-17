@@ -6,13 +6,13 @@ import { ToastContainer } from 'react-toastify';
 import NavBar from "./Components/NavBar"
 import Home from "./Components/Home";
 import Signup from "./Components/Signup";
-import EditProfile from "./Components/EditProfile"
+import EditProfile from "./Components/pages/EditProfile"
 import Login from "./Components/Login";
-import ProfilePage from "./Components/ProfilePage";
+import ProfilePage from "./Components/pages/ProfilePage";
 import Footer from "./Components/pages/Footer"
 import ProtectedRoutes from "./Components/ProtectedRoutes"
-import ClinicContainer from "./Components/ClinicContainer";
-import FavoritesContainer from "./Components/FavoritesContainer"
+import ClinicContainer from "./Components/pages/ClinicContainer";
+import FavoritesContainer from "./Components/pages/FavoritesContainer"
 import 'react-toastify/dist/ReactToastify.css';
 import "./App.css"
 
