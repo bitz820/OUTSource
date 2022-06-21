@@ -96,14 +96,13 @@ const Home = () => {
           </p>
           <p>Get off the couch and  <a target="_blank"
             rel='noreferrer' href='https://members.austinlgbtchamber.com/events'>
-              <div class="btn" id='check'>Check it OUT</div>
+              <button className="btn" id='check'>Check it OUT</button>
           </a>
           </p>
         </div>
         <div className="img__container">
           <img src={outsource5} alt="placeholder" />
           <img src={outsource7} alt="placeholder" />
-
           <img src={outsource6} alt="placeholder" />
         </div>
       </div>

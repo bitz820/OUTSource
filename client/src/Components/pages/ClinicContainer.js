@@ -34,8 +34,8 @@ const ClinicContainer = () => {
       <div className="search__container">
         <div>
           <label>
-            <select name="services" onChange={(e) => setServiceFilter(e.target.value)}>
-              <option disabled value="">--Please choose a service to filter--</option>
+            <select className="custom-select" name="services" onChange={(e) => setServiceFilter(e.target.value)}>
+              <option value="">--Please choose a service to filter--</option>
               <option value="">All Services</option>
               <option value="HIV Testing">HIV Testing</option>
               <option value="PrEP">PrEP</option>
@@ -59,27 +59,8 @@ const ClinicContainer = () => {
               />
               <label for="patient__toggle"></label>
             </div>
-              Accepting New Patients?
-
+            Accepting New Patients?
           </div>
-          {/* <label>
-            <input
-              type="checkbox"
-              value="takes_uninsured"
-              name="takes_uninsured"
-              onChange={() => setInsuranceChecked(!insuranceChecked)}
-            />
-            Takes Uninsured?
-          </label> */}
-          {/* <label>
-            <input
-              type="checkbox"
-              value="takes_uninsured"
-              name="takes_uninsured"
-              onChange={() => setNewPatientChecked(!newPatientChecked)}
-            />
-            Search Only Clinics Accepting New Patients
-          </label> */}
         </div>
       </div>
       <motion.div layout className="wrapper">

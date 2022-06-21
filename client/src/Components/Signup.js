@@ -12,7 +12,7 @@ function Signup() {
         last_name: "",
         email: "",
         password: "",
-        age: null,
+        age: "",
         gender: "",
         sexuality: "",
         reason_for_signup: "",
